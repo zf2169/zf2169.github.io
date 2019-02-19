@@ -1,2 +1,3 @@
 name: Abby Fan Personal Website
 markdown: kramdown
+permalink: /blog/:year/:month/:day/:title
