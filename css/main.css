@@ -1,10 +1,28 @@
 body { margin: 40px auto; width: 100%; }
 
-menu { margin: 40px auto; width: 70%; }
+menu { margin: 20px auto; width: 70%; }
 
-background { margin: 40px auto;  width: 100%; }
+/* Background */
+background { margin: 10px auto; }
+.home-image {
+    background-image: url("/img/main_page_bg.jpg");
+    background-color: #cccccc;
+    height: 300px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
 
-maintext { margin: 40px auto; width: 70%; }
+maintext { margin: 20px; width: 70%; }
 
 nav ul, footer ul {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
@@ -27,29 +45,10 @@ p1 { font-size: 1.5em; font-family: 'Merriweather', Georgia, Times; line-height:
 
 p2 { font-size: 20px; font-family: 'Merriweather', Georgia, Times; line-height: 1.4em; color: #333; }
 
-footer { border-top: 1px solid #d5d5d5; font-size: .8em; }
+footer { border-top: 1px solid #d5d5d5; font-size: .8em; width: 70%; }
 
 ul.posts { margin: 20px auto 40px; font-size: 1.5em; }
 
 ul.posts li { list-style: none; }
 
 img.avatar { margin-bottom: 30px; margin-right: 10px;}
-
-.home-image {
-  background-image: url("/img/main_page_bg.jpg");
-  background-color: #cccccc;
-  height: 300px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-}
-
-.hero-text {
-  text-align: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-}
