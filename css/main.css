@@ -38,8 +38,9 @@ nav ul li, footer ul li {
 a { text-decoration: none; color: #999; }
 a:hover { text-decoration: underline;   color: #0088cc; }
 
-
 h1 { font-size: 2.5em; font-family: "Times New Roman", 'Times', 'Serif'; }
+
+h1l { font-size: 4em; font-family: "Times New Roman", 'Times', 'Serif'; }
 
 p1 { font-size: 1.5em; font-family: 'Merriweather', Georgia, Times; line-height: 1.4em; color: #333; }
 
@@ -52,7 +53,7 @@ ul.posts li { list-style: none; }
 img.avatar { margin-bottom: 30px; margin-right: 10px;}
 
 /*Homepage & About & Blog*/
-.mainlayout { margin: 20px; width: 70%; }
+.maintext{ width: 70%; margin: 0 auto; }
 
 /*CV*/
 .cv { width: 70%; margin: 0 auto; }
