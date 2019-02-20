@@ -1,8 +1,10 @@
-menu { margin: 40px auto;  width: 70%; }
+body { margin: 40px auto; width: 100%; }
+
+menu { margin: 40px auto; width: 70%; }
 
 background { margin: 40px auto;  width: 100%; }
 
-body { margin: 40px auto;  width: 70%; }
+maintext { margin: 40px auto; width: 70%; }
 
 nav ul, footer ul {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
