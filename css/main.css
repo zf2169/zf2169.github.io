@@ -53,7 +53,7 @@ ul.posts li { list-style: none; }
 img.avatar { margin-bottom: 30px; margin-right: 10px;}
 
 /*Homepage & About & Blog*/
-.maintext{ width: 70%; margin: 10 auto; }
+.maintext{ width: 70%; margin: 10px auto; }
 
 /*CV*/
 .cv { width: 70%; margin: 0 auto; }
