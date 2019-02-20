@@ -14,11 +14,10 @@ background { margin: 10px auto; }
     position: relative;
 }
 .hero-text {
-    width: 70%;
     text-align: left;
     position: absolute;
     top: 50%;
-    /*left: 30%;*/
+    left: 40%;
     transform: translate(-50%, -50%);
     color: white;
 }
