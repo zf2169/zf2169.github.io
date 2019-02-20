@@ -1,4 +1,4 @@
-body { margin: 40px auto; width: 70%; }
+body { margin: 40px auto; }
 
 nav ul, footer ul {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
@@ -15,11 +15,11 @@ a { text-decoration: none; color: #999; }
 a:hover { text-decoration: underline;   color: #0088cc; }
 
 
-h1 { font-size: 2.5em; font-family: "Times New Roman", 'Times', 'Serif'; }
+h1 { font-size: 2.5em; font-family: "Times New Roman", 'Times', 'Serif'; width: 70%; }
 
-p1 { font-size: 1.5em; font-family: 'Merriweather', Georgia, Times; line-height: 1.4em; color: #333; }
+p1 { font-size: 1.5em; font-family: 'Merriweather', Georgia, Times; line-height: 1.4em; color: #333; width: 70%; }
 
-p2 { font-size: 20px; font-family: 'Merriweather', Georgia, Times; line-height: 1.4em; color: #333; }
+p2 { font-size: 20px; font-family: 'Merriweather', Georgia, Times; line-height: 1.4em; color: #333; width: 70%; }
 
 footer { border-top: 1px solid #d5d5d5; font-size: .8em; }
 
@@ -29,8 +29,7 @@ ul.posts li { list-style: none; }
 
 img.avatar { margin-bottom: 30px; margin-right: 10px;}
 
-.hero-image {
-  width: 100%; 
+.home-image {
   background-image: url("/img/main_page_bg.jpg");
   background-color: #cccccc;
   height: 300px;
