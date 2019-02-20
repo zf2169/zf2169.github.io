@@ -52,3 +52,6 @@ ul.posts { margin: 20px auto 40px; font-size: 1.5em; }
 ul.posts li { list-style: none; }
 
 img.avatar { margin-bottom: 30px; margin-right: 10px;}
+
+/*CV*/
+.cv { width: 70%; margin: 0 auto; }
