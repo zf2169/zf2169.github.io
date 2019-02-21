@@ -8,10 +8,15 @@ date: 2019-01-30
 ## 1.What is Machine Learning?
 Tom Mitchell in his book Machine Learning provides a definition in the opening line of the preface:
 > A computer program is said to learn from **experience E** with respect to some class of **tasks T** and **performance measure P**, if its performance at tasks in T, as measured by P, improves with experience E. 
+
 where,
+
 T := The goal of the algorithm(prediction/classification/cluster).
+
 P := The cost function of the algorithm.
+
 E := The process of the algorithm.
+
 
 Therefore, based on the definition above, I summarize five questions that we should ask to know about an algorithm and top 15 most popular machine learning algorithms. (**BIG 5 $$\times$$ TOP 15**)
 #### BIG 5
@@ -20,6 +25,7 @@ Therefore, based on the definition above, I summarize five questions that we sho
 3. What is the process of the algorithm?
 4. What is the cost function?
 5. What are the advantages/disadvantages?
+
 
 #### TOP 15
 1. Linear Regression
@@ -39,9 +45,10 @@ Therefore, based on the definition above, I summarize five questions that we sho
 15. PCA (Principal Component Analysis)
 
 # Part I
-## 1. Linear Regression $$\hat{Y}= \beta X+ \epsilon $$
+## 1. Linear Regression
 ### 1.1 What are the basic concepts/ What problem does it solve? 
-A **linear** approach to model the relationship between continuous variables. '$$X$$'s are the predictors( or explanatory, or independent variables). '$$Y$$' is the outcome( or response, or dependent variable).
+Basic concepts: A **linear** approach to model the relationship between continuous variables. '$$X$$'s are the predictors( or explanatory, or independent variables). '$$Y$$' is the outcome( or response, or dependent variable).
+Model: $$\hat{Y}= \beta X+ \epsilon $$
 
 ### 1.2 What are the assumptions?
 -The mean function is linear
