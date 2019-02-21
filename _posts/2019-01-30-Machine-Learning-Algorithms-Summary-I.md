@@ -50,17 +50,24 @@ Therefore, based on the definition above, I summarize five questions that we sho
 - The mean function is linear
 - The variance function is constant
 - Residuals are statistically independent, normally distributed with uniform variance
-- The error term $$\epsilon$$ is assumed to be normally distributed with a mean of 0 and constant variance $\sigma^2$ at every value of $$X$$ (Homoscedastic)
+- The error term $$\epsilon$$ is assumed to be normally distributed with a mean of 0 and constant variance $$\sigma^2$$ at every value of $$X$$ (Homoscedastic)
 - The error terms are assumed to be independent, that is $$\epsilon \sim N(0,\sigma^2)$$
 
 ### 1.3 What is the process of the algorithm?
 We want to find the best fit line:
+
 \$$ \hat{y_i}y= \theta_0 + \theta_1 x_i $$
+
 Usually, we achieve this by using **least squares estimation**, which finds the values of $$\theta_0$$ and $$\theta_1$$ that minimize the sum of the squared predicted errors:
+
 \$$ \sum_{i=1}^n (y_i- \hat{y_i})^2 $$
+
 thus we have,
+
 \$$\theta_1= \frac{\sum_{i=1}^n (x_i-\bar{x})(y_i-\bar{y})}{\sum_{i=1}^n (x_i−\bar{x})^2$$
+
 and
+
 \$$\theta_0= \bar{y} - \theta_1 \bar{x}$$
 
 ### 1.4 What is the cost function?
