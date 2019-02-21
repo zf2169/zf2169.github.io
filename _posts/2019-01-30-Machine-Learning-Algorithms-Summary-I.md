@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Machine Learning Algorithms Summary Ⅰ"
+title: "Machine Learning Algorithms Summary I"
 date: 2019-01-30
 ---
 
