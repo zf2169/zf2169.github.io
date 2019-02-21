@@ -88,7 +88,9 @@ and \$$\theta_0= \bar{y} - \theta_1 \bar{x}$$
 The same as linear regression
 
 ### 2.3 What is the process of the algorithm?
-Similar to linear regression, we want to find the best fit line: \$$ \hat{y_i}= \theta_0 + \theta_1 x_i $$. However, we add an L1-penalty to the previous cost function, that is, we want to find \$$ \hat{\theta} = argmin_{\theta} \frac{1}{n} \sum_{i=1}^n (y_i-\theta_0-x_i^T\theta)^2 + \lambda \sum_{j=1}^n \theta_j^2 $$ 
+Similar to linear regression, we want to find the best fit line: \$$ \hat{y_i}= \theta_0 + \theta_1 x_i $$. \\
+However, we add an L1-penalty to the previous cost function, that is, we want to find \$$ \hat{\theta} = argmin_{\theta} \frac{1}{n} \sum_{i=1}^n (y_i-\theta_0-x_i^T\theta)^2 + \lambda \sum_{j=1}^n \theta_j^2 $$
+
 `note: the penalty only penalize $$\theta_1, \dots, \theta_n$$, not $$\theta_0$$`
 
 When $$\lambda=0$$, Lasso gives the least squares fit, same as linear regression.
@@ -96,7 +98,17 @@ When $$\lambda=0$$, Lasso gives the least squares fit, same as linear regression
 When $$\lambda \to \infty$$, Lasso makes all estimated coefficients nearly equal 0, which gives a null model.
 
 ### 2.4 What is the cost function?
-\$$J(\theta)= \frac{1}{2n} \sum_{i=1}^n (y_i-\theta_0-x_i^T\theta)^2)+\lambda \sum_{j=1}^n |theta_j|$$
+\$$J(\theta)= \frac{1}{n} \sum_{i=1}^n (y_i-\theta_0-x_i^T\theta)^2)+\lambda \sum_{j=1}^n |\theta_j|$$
 
 
 ### 2.5 What are the advantages and disadvantages?
+**Advantages:**
+- Lasso can act as feature selection since it can force coefficients to be 0.
+- Produces simple models which are easier to interpret.
+- Lasso to perform better in a setting where a relatively small number of predictors have substantial coefficients, and the remaining predictors have coefficients that are very small or that equal zero
+- Lasso tends to outperform ridge regression in terms of bias, variance, and MSE
+
+**Disadvantages:**
+- For n<p case (high dimensional case), LASSO can at most select n features. This has to do with the nature of convex optimization problem LASSO tries to minimize.
+- For usual case where we have correlated features which is usually the case for real word datasets, LASSO will select only one feature from a group of correlated features. That selection also happens to be arbitrary in nature. Often one might not want this behavior. Like in gene expression the ideal gene selection method is: eliminate the trivial genes and automatically include whole groups into the model once one gene among them is selected (‘grouped selection’). LASSO doesn't help in grouped selection.
+- For n>p case, it is seen that for correlated features , Ridge (Tikhonov Regularization) regression has better prediction power than LASSO. Though Ridge won't help in feature selection and model interpretability is low.
