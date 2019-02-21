@@ -56,17 +56,11 @@ Therefore, based on the definition above, I summarize five questions that we sho
 ### 1.3 What is the process of the algorithm?
 We want to find the best fit line: \$$ \hat{y_i}= \theta_0 + \theta_1 x_i $$
 
-Usually, we achieve this by using **least squares estimation**, which finds the values of $$\theta_0$$ and $$\theta_1$$ that minimize the sum of the squared predicted errors:
+Usually, we achieve this by using **least squares estimation**, which finds the values of $$\theta_0$$ and $$\theta_1$$ that minimize the sum of the squared predicted errors: \$$ \sum_{i=1}^n (y_i- \hat{y_i})^2 $$
 
-\$$ \sum_{i=1}^n (y_i- \hat{y_i})^2 $$
+thus we have, \$$\theta_1= \frac {\sum_{i=1}^n (x_i-\bar{x}) (y_i-\bar{y})} {\sum_{i=1}^n (x_i−\bar{x})^2} $$
 
-thus we have,
-
-\$$\theta_1= \frac {\sum_{i=1}^n (x_i-\bar{x}) (y_i-\bar{y})} {\sum_{i=1}^n (x_i−\bar{x})^2} $$
-
-and
-
-\$$\theta_0= \bar{y} - \theta_1 \bar{x}$$
+and \$$\theta_0= \bar{y} - \theta_1 \bar{x}$$
 
 ### 1.4 What is the cost function?
 \$$J(\theta)= \frac{1}{n} \sum_{i=1}^n (y_i− \hat{y_i})^2$$
@@ -80,6 +74,29 @@ and
 **Disadvantages:**
 - It assumes a straight-line relationship between dependent and independent variables, which sometimes is incorrect.
 - Very sensitive to the outliers(anomalies) in the data.
-- In n<p (the number of parameters larger than samples) cases, linear regression tends to model noise rather than relationship.
+- In n<p cases (the number of parameters larger than samples), linear regression tends to model noise rather than relationship.
+
+## 2. Regression with Lasso
+### 2.1 What are the basic concepts/ What problem does it solve? 
+- **Lasso** is a regularization method, usually used in **linear regression**, performing both variable selection and regularization to reduce overfitting.
+
+- Lasso uses L1 penalty when fitting the model. L1 - the sum of the absolute values of the coefficients $$=\sum_(j=1)^n |\theta_j|^2$$
+
+- Lasso can force regression coefficients to be exactly 0
+
+### 2.2 What are the assumptions?
+The same as linear regression
+
+### 2.3 What is the process of the algorithm?
+Similar to linear regression, we want to find the best fit line: \$$ \hat{y_i}= \theta_0 + \theta_1 x_i $$. However, we add an L1-penalty to the previous cost function, that is, we want to find \$$\hat{\theta} = arg\min_{\theta} \frac{1}{n} \sum_{i=1}^n (y_i-\theta_0-x_i^T\theta)^2)+\lambda \sum_{j=1}^n \theta_j^2 $$ 
+`note: the penalty only penalize $$\theta_1, \dots, \theta_n$$, not $$\theta_0$$`
+
+When $$\lambda=0$$, Lasso gives the least squares fit, same as linear regression.
+
+When $$\lambda \to \infty$$, Lasso makes all estimated coefficients nearly equal 0, which gives a null model.
+
+### 2.4 What is the cost function?
+\$$J(\theta)= \frac{1}{2n} \sum_{i=1}^n (y_i-\theta_0-x_i^T\theta)^2)+\lambda \sum_{j=1}^n \theta_j^2$$
 
 
+### 2.5 What are the advantages and disadvantages?
