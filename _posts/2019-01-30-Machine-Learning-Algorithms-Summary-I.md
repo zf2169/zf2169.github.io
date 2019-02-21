@@ -81,7 +81,7 @@ and \$$\theta_0= \bar{y} - \theta_1 \bar{x}$$
 ### 2.1 What are the basic concepts/ What problem does it solve? 
 - **Lasso** is a regularization method, usually used in **linear regression**, performing both variable selection and regularization to reduce overfitting.
 
-- Lasso uses L1 penalty when fitting the model. L1 is the sum of the absolute values of the coefficients $$=\sum_(j=1)^n |\theta_j|$$
+- Lasso uses L1 penalty when fitting the model. $$ L1 := \sum_(j=1)^n |\theta_j| $$, is the sum of the absolute values of the coefficients.
 
 - Lasso can force regression coefficients to be exactly 0.
 
@@ -89,9 +89,7 @@ and \$$\theta_0= \bar{y} - \theta_1 \bar{x}$$
 The same as linear regression
 
 ### 2.3 What is the process of the algorithm?
-Similar to linear regression, we want to find the best fit line: $$ \hat{y_i} = \theta_0 + \theta_1 x_i $$
-
-However, we add an L1 penalty to the previous cost function, that is, we want to find \$$ \hat{\theta} = \argmin_{\theta} \frac{1}{n} \sum_{i=1}^n (y_i-\theta_0-x_i^T\theta)^2 + \lambda \sum_{j=1}^n |\theta_j| $$
+Similar to linear regression, we want to find the best fit line: $$ \hat{y_i} = \theta_0 + \theta_1 x_i $$. However, we add an L1 penalty to the previous cost function, that is, we want to find \$$ \hat{\theta} = \arg\min_{\theta} \frac{1}{n} \sum_{i=1}^n (y_i-\theta_0-x_i^T\theta)^2 + \lambda \sum_{j=1}^n |\theta_j| $$
 
 `note: the penalty only penalize` $$\theta_1, \dots, \theta_n$$, `not` $$\theta_0$$
 
@@ -126,7 +124,7 @@ When $$\lambda \to \infty$$, Lasso makes all estimated coefficients nearly equal
 Same as linear regression
 
 ### 3.3 What are the steps of the algorithm?
-Similar to Lasso, Ridge uses L2 penalty (the sum of the squares of the coefficients) instead, that is, we try to find \$$ \hat{\theta} = \argmin_{\theta} \frac{1}{n} \sum_{i=1}^n (y_i-\theta_0-x_i^T\theta)^2 + \lambda \sum_{j=1}^n \theta_j^2 $$
+Similar to Lasso, Ridge uses L2 penalty (the sum of the squares of the coefficients) instead, that is, we try to find \$$ \hat{\theta} = \arg\min_{\theta} \frac{1}{n} \sum_{i=1}^n (y_i-\theta_0-x_i^T\theta)^2 + \lambda \sum_{j=1}^n \theta_j^2 $$
 
 ### 3.4 What is the cost function?
 \$$J(\theta)= \frac{1}{n} \sum_{i=1}^n (y_i-\theta_0-x_i^T\theta)^2 + \lambda \sum_{j=1}^n \theta_j^2$$
