@@ -81,7 +81,7 @@ and \$$\theta_0= \bar{y} - \theta_1 \bar{x}$$
 ### 2.1 What are the basic concepts/ What problem does it solve? 
 - **Lasso** is a regularization method, usually used in **linear regression**, performing both variable selection and regularization to reduce overfitting.
 
-- Lasso uses L1 penalty when fitting the model, L1 penalty is the sum of the absolute values of the coefficients, $$\sum_{j=1}^n |\theta_j|$$.
+- Lasso uses L1 penalty when fitting the model, L1 penalty is the sum of the absolute values of the coefficients $$\sum_{j=1}^n |\theta_j| $$
 
 - Lasso can force regression coefficients to be exactly 0.
 
@@ -104,14 +104,19 @@ When $$\lambda \to \infty$$, Lasso makes all estimated coefficients nearly equal
 ### 2.5 What are the advantages and disadvantages?
 **Advantages:**
 - Lasso can act as feature selection since it can force coefficients to be 0.
+
 - Produces simple models which are easier to interpret.
+
 - Lasso to perform better in a setting where a relatively small number of predictors have substantial coefficients, and the remaining predictors have coefficients that are very small or that equal zero
+
 - Lasso tends to outperform ridge regression in terms of bias, variance, and MSE
 
 **Disadvantages:**
-- For n<p case (high dimensional case), LASSO can at most select n features.
-- For usual case, where we have correlated features (usually for real word datasets, such as gene data), LASSO selects only one feature from a group of correlated features, that is, LASSO doesn't help in grouped selection.
-- For n>p case, it is often seen that Ridge outperforms LASSO for correlated features.
+- For n<p case (high dimensional case), Lasso can at most select n features.
+
+- For usual case, where we have correlated features (usually for real word datasets, such as gene data), LASSO selects only one feature from a group of correlated features, that is, Lasso doesn't help in grouped selection.
+
+- For n>p case, it is often seen that Ridge outperforms Lasso for correlated features.
 
 
 ## 3. Regression with Ridge
@@ -132,8 +137,11 @@ Similar to Lasso, Ridge uses L2 penalty (the sum of the squares of the coefficie
 ### 3.5 What are the Advantages/Disadvantages?
 **Advantages:**
 - As $$\lambda$$ increases, the shrinkage of the ridge coefficient estimates leads to a substantial reduction in the variance of the predictions, at the expense of a slight increase in bias
+
 - Ridge regression works best in situations where the least squares estimates have high variance. Meaning that a small change in the training data can cause a large change in the least squares coefficient estimates
+
 - Ridge will perform better when the response is a function of many predictors, all with coefficients of roughly equal size
+
 - Ridge also has substantial computational advantages over best subset selection.
 
 **Disadvantages:**
