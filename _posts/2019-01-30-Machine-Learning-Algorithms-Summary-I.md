@@ -96,7 +96,7 @@ When $$\lambda=0$$, Lasso gives the least squares fit, same as linear regression
 When $$\lambda \to \infty$$, Lasso makes all estimated coefficients nearly equal 0, which gives a null model.
 
 ### 2.4 What is the cost function?
-\$$J(\theta)= \frac{1}{2n} \sum_{i=1}^n (y_i-\theta_0-x_i^T\theta)^2)+\lambda \sum_{j=1}^n \theta_j^2$$
+\$$J(\theta)= \frac{1}{2n} \sum_{i=1}^n (y_i-\theta_0-x_i^T\theta)^2)+\lambda \sum_{j=1}^n |theta_j|$$
 
 
 ### 2.5 What are the advantages and disadvantages?
