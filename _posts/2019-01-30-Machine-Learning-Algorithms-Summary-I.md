@@ -76,13 +76,14 @@ and \$$\theta_0= \bar{y} - \theta_1 \bar{x}$$
 - Very sensitive to the outliers(anomalies) in the data.
 - In n<p cases (the number of parameters larger than samples), linear regression tends to model noise rather than relationship.
 
+
 ## 2. Regression with Lasso
 ### 2.1 What are the basic concepts/ What problem does it solve? 
 - **Lasso** is a regularization method, usually used in **linear regression**, performing both variable selection and regularization to reduce overfitting.
 
 - Lasso uses L1 penalty when fitting the model. L1 is the sum of the absolute values of the coefficients $$=\sum_(j=1)^n |\theta_j|$$
 
-- Lasso can force regression coefficients to be exactly 0
+- Lasso can force regression coefficients to be exactly 0.
 
 ### 2.2 What are the assumptions?
 The same as linear regression
@@ -90,7 +91,7 @@ The same as linear regression
 ### 2.3 What is the process of the algorithm?
 Similar to linear regression, we want to find the best fit line: $$ \hat{y_i} = \theta_0 + \theta_1 x_i $$
 
-However, we add an L1 penalty to the previous cost function, that is, we want to find \$$ \hat{\theta} = argmin_{\theta} \frac{1}{n} \sum_{i=1}^n (y_i-\theta_0-x_i^T\theta)^2 + \lambda \sum_{j=1}^n \theta_j^2 $$
+However, we add an L1 penalty to the previous cost function, that is, we want to find \$$ \hat{\theta} = \argmin_{\theta} \frac{1}{n} \sum_{i=1}^n (y_i-\theta_0-x_i^T\theta)^2 + \lambda \sum_{j=1}^n |\theta_j| $$
 
 `note: the penalty only penalize` $$\theta_1, \dots, \theta_n$$, `not` $$\theta_0$$
 
@@ -110,6 +111,32 @@ When $$\lambda \to \infty$$, Lasso makes all estimated coefficients nearly equal
 - Lasso tends to outperform ridge regression in terms of bias, variance, and MSE
 
 **Disadvantages:**
-- For n<p case (high dimensional case), LASSO can at most select n features. This has to do with the nature of convex optimization problem LASSO tries to minimize.
-- For usual case where we have correlated features which is usually the case for real word datasets, LASSO will select only one feature from a group of correlated features. That selection also happens to be arbitrary in nature. Often one might not want this behavior. Like in gene expression the ideal gene selection method is: eliminate the trivial genes and automatically include whole groups into the model once one gene among them is selected (‘grouped selection’). LASSO doesn't help in grouped selection.
-- For n>p case, it is seen that for correlated features , Ridge (Tikhonov Regularization) regression has better prediction power than LASSO. Though Ridge won't help in feature selection and model interpretability is low.
+- For n<p case (high dimensional case), LASSO can at most select n features.
+- For usual case, where we have correlated features (usually for real word datasets, such as gene data), LASSO selects only one feature from a group of correlated features, that is, LASSO doesn't help in grouped selection.
+- For n>p case, it is often seen that Ridge outperforms LASSO for correlated features.
+
+
+## 3. Regression with Ridge
+### 3.1 What are the basic concepts/ What problem does it solve? 
+- **Ridge** is also a regularization method, which uses **L2 penalty** in linear regression to reduce overfitting.
+
+- Ridge can only regression coefficients to approach 0, but not exactly 0.
+
+### 3.2 What are the assumptions?
+Same as linear regression
+
+### 3.3 What are the steps of the algorithm?
+Similar to Lasso, Ridge uses L2 penalty (the sum of the squares of the coefficients) instead, that is, we try to find \$$ \hat{\theta} = \argmin_{\theta} \frac{1}{n} \sum_{i=1}^n (y_i-\theta_0-x_i^T\theta)^2 + \lambda \sum_{j=1}^n \theta_j^2 $$
+
+### 3.4 What is the cost function?
+\$$J(\theta)= \frac{1}{n} \sum_{i=1}^n (y_i-\theta_0-x_i^T\theta)^2 + \lambda \sum_{j=1}^n \theta_j^2$$
+
+### 3.5 What are the Advantages/Disadvantages?
+**Advantages:**
+- As $$\lambda$$ increases, the shrinkage of the ridge coefficient estimates leads to a substantial reduction in the variance of the predictions, at the expense of a slight increase in bias
+- Ridge regression works best in situations where the least squares estimates have high variance. Meaning that a small change in the training data can cause a large change in the least squares coefficient estimates
+- Ridge will perform better when the response is a function of many predictors, all with coefficients of roughly equal size
+- Ridge also has substantial computational advantages over best subset selection.
+
+**Disadvantages:**
+- Ridge is not able to shrink coefficients to exactly 0, thus it cannot perform variable selection.
