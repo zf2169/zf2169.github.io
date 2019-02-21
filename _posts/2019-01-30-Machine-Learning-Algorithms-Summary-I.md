@@ -20,6 +20,7 @@ Therefore, based on the definition above, I summarize five questions that we sho
 3. What is the process of the algorithm?
 4. What is the cost function?
 5. What are the advantages/disadvantages?
+
 #### TOP 15
 1. Linear Regression
 2. Regression with Lasso
