@@ -54,9 +54,7 @@ Therefore, based on the definition above, I summarize five questions that we sho
 - The error terms are assumed to be independent, that is $$\epsilon \sim N(0,\sigma^2)$$
 
 ### 1.3 What is the process of the algorithm?
-We want to find the best fit line:
-
-\$$ \hat{y_i}y= \theta_0 + \theta_1 x_i $$
+We want to find the best fit line: \$$ \hat{y_i}= \theta_0 + \theta_1 x_i $$
 
 Usually, we achieve this by using **least squares estimation**, which finds the values of $$\theta_0$$ and $$\theta_1$$ that minimize the sum of the squared predicted errors:
 
@@ -64,7 +62,7 @@ Usually, we achieve this by using **least squares estimation**, which finds the 
 
 thus we have,
 
-\$$\theta_1= \frac{\sum_{i=1}^n (x_i-\bar{x})(y_i-\bar{y})}{\sum_{i=1}^n (x_i−\bar{x})^2$$
+\$$\theta_1= \frac {\sum_{i=1}^n (x_i-\bar{x}) (y_i-\bar{y})} {\sum_{i=1}^n (x_i−\bar{x})^2} $$
 
 and
 
