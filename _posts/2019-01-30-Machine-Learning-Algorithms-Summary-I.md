@@ -209,9 +209,10 @@ and choose a probability threshold to determine the outcome belong to a certain 
 We use a cost function called **Cross-Entropy**, instead of Mean Squared Error, also known as **Log Loss**. 
 
 Cross-entropy loss can be divided into two separate cost functions: one for $$y=1$$ and one for $$y=0$$.
-\$$ J(\theta)= \frac{1}{n} \sum_{i=1}^n Cost(h_{\theta}(x_i), y_i)$$
-\$$ Cost(h_{\theta}(x_i), y_i)= \left\{ \begin{split}
--log(h_{theta}(x))  if y=1 \\
--log(1- h_{theta}(x))  if y=0 \\
-\end{split} \right. $$
-
+\begin{equation}
+$$ J(\theta)= \frac{1}{n} \sum_{i=1}^n Cost(h_{\theta}(x_i), y_i)$$
+$$ Cost(h_{\theta}(x_i), y_i)= \left\{ \begin{split}
+-log(h_{\theta}(x))  if y=1 \\
+-log(1- h_{\theta}(x))  if y=0 \\
+\end{split} \right.
+\end{equation}
