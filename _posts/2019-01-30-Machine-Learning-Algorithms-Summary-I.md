@@ -296,16 +296,20 @@ $$Posterior= \frac{Likelihood \cdot Proposition prior probability}{Evidence prio
 ### 6.3 What is the process of the algorithm?
 <p align="center">
   <img height="300" src="https://zf2169.github.io/img/naive_al_1.PNG">
+  <be>
   <a href="http://stat.columbia.edu/~porbanz/teaching/UN3106S18/slides_25Jan.pdf"> naive bayes classifiers - Columbia Statistics
-  <img height="300" src="https://zf2169.github.io/img/naive1.PNG">
   <br>
-  <img height="300" src="https://zf2169.github.io/img/naive2.PNG">
+  <img height="400" src="https://zf2169.github.io/img/naive1.PNG">
+  <br>
+  <img height="400" src="https://zf2169.github.io/img/naive2.PNG">
   <br>
   <a href="https://www.globalsoftwaresupport.com/naive-bayes-classifier-explained-step-step/"> Naive Bayes Classifier Explained Step by Step </a> 
 </p>
 
+
 ### 6.4 What is the cost function?
 <p align="center">
   <img height="300" src="https://zf2169.github.io/img/naive_al_2.PNG">
+  <br>
   <a href="http://stat.columbia.edu/~porbanz/teaching/UN3106S18/slides_25Jan.pdf"> naive bayes classifiers - Columbia Statistics
 </p>
