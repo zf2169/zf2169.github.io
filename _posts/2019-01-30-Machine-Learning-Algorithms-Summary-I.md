@@ -255,7 +255,7 @@ The difference between the cost function and the loss function: the loss functio
 ### 5.6 Decision boundary
 As mentioned above, we can have different decision boundaries using different combination of predictors
 <p align="center">
-  <img height=300px src="/img/decision_boundary_2.PNG">
+  <img height="300" src="../img/decision_boundary_2.PNG">
   <a href="https://www.coursera.org/learn/machine-learning/home/welcome"> Machine Learning by Standford University on Coursera </a> 
 </p>
 
