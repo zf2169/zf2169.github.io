@@ -59,6 +59,7 @@ img.avatar { margin-bottom: 30px; margin-right: 10px;}
 
 /*Homepage & About & Blog*/
 .maintext{ width: 70%; margin: 10px auto; }
+.maintext .post { font-size: 22px; font-family: "Times New Roman", 'Times', 'Serif'; line-height: 1.4em; }
 
 /*CV*/
 .cv { width: 70%; margin: 0 auto; }
