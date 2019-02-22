@@ -66,7 +66,6 @@ and \$$\theta_0= \bar{y} - \theta_1 \bar{x}$$
 \$$J(\theta)= \frac{1}{n} \sum_{i=1}^n (y_i− \hat{y_i})^2$$
 
 ### 1.5 What are the Advantages and Disadvantages?
-
 **Advantages:**
 - Linear regression is an extremely simple method, very easy to use, understand, and explain.
 - The best fit line acquires the minimum error from all the points, which has high efficiency.
@@ -101,7 +100,6 @@ When $$\lambda \to \infty$$, Lasso makes all estimated coefficients nearly equal
 
 ### 2.4 What is the cost function?
 \$$J(\theta)= \frac{1}{n} \sum_{i=1}^n (y_i-\theta_0-x_i^T\theta)^2)+\lambda \sum_{j=1}^n |\theta_j|$$
-
 
 ### 2.5 What are the advantages and disadvantages?
 **Advantages:**
@@ -239,7 +237,7 @@ The difference between the cost function and the loss function: the loss functio
 **Advantages:**
 - Outputs have a nice probabilistic interpretation, and the algorithm can be regularized to avoid overfitting. Logistic models can be updated easily with new data using stochastic gradient descent.
 
-- Linear combination of parameters β and the input vector will be incredibly easy to compute.
+- Linear combination of parameters and the input vector is easy to compute.
 
 - Convenient probability scores for observations
 
@@ -253,3 +251,12 @@ The difference between the cost function and the loss function: the loss functio
 - Logistic regression tends to underperform when there are multiple or non-linear decision boundaries. They are not flexible enough to naturally capture more complex relationships.
 
 - Cannot handle large number of categorical variables well
+
+### 5.6 Decision boundary
+As mentioned above, we can have different decision boundaries using different combination of predictors
+<div style="text-align:center">
+  <img src="/img/decision_boundary_1.png"/>
+  <img src="/img/decision_boundary_2.png"/>
+  <a href="https://www.coursera.org/learn/machine-learning/home/welcome"> Machine Learning by Standford University on Coursera </a> 
+ <\div>
+
