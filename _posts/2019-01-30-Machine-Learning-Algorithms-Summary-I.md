@@ -81,7 +81,7 @@ and \$$\theta_0= \bar{y} - \theta_1 \bar{x}$$
 ### 2.1 What are the basic concepts/ What problem does it solve? 
 - **Lasso** is a regularization method, usually used in **linear regression**, performing both variable selection and regularization to reduce overfitting.
 
-- Lasso uses L1 penalty when fitting the model, L1 penalty is the sum of the absolute values of the coefficients $$\sum_{j=1}^n |\theta_j| $$
+- Lasso uses L1 penalty when fitting the model, L1 penalty is the sum of the absolute values of the coefficients \$$L1 = \sum_{j=1}^n |\theta_j| $$
 
 - Lasso can force regression coefficients to be exactly 0.
 
@@ -123,13 +123,15 @@ When $$\lambda \to \infty$$, Lasso makes all estimated coefficients nearly equal
 ### 3.1 What are the basic concepts/ What problem does it solve? 
 - **Ridge** is also a regularization method, which uses **L2 penalty** in linear regression to reduce overfitting.
 
-- Ridge can only regression coefficients to approach 0, but not exactly 0.
+- Ridge only regression coefficients to approach 0, but not exactly 0.
 
 ### 3.2 What are the assumptions?
 Same as linear regression
 
-### 3.3 What are the steps of the algorithm?
+### 3.3 What is the process of the algorithm?
 Similar to Lasso, Ridge uses L2 penalty (the sum of the squares of the coefficients) instead, that is, we try to find \$$ \hat{\theta} = \arg\min_{\theta} \frac{1}{n} \sum_{i=1}^n (y_i-\theta_0-x_i^T\theta)^2 + \lambda \sum_{j=1}^n \theta_j^2 $$
+
+$$\lambda$$ is the tuning parameter that decides how much we want to penalize the flexibility of the model. Therefore, selecting a good value of $$\lambda$$ is critical.
 
 ### 3.4 What is the cost function?
 \$$J(\theta)= \frac{1}{n} \sum_{i=1}^n (y_i-\theta_0-x_i^T\theta)^2 + \lambda \sum_{j=1}^n \theta_j^2$$
@@ -142,7 +144,51 @@ Similar to Lasso, Ridge uses L2 penalty (the sum of the squares of the coefficie
 
 - Ridge will perform better when the response is a function of many predictors, all with coefficients of roughly equal size
 
-- Ridge also has substantial computational advantages over best subset selection.
-
 **Disadvantages:**
-- Ridge is not able to shrink coefficients to exactly 0, thus it cannot perform variable selection.
+- Ridge cannot perform variable selection since it cannot shrink coefficients to exactly 0.
+
+
+## 4. Stepwise Regression
+### 4.1 What are the basic concepts/ What problem does it solve?
+We find a 'best' least squares regression using a subset of all response variables.
+
+There are three methods to find the subset:
+- Best Subset Selection
+- Forward Stepwise Selection
+- Backward Stepwise Selection
+
+### 4.2 What are the assumptions?
+Same as linear regression
+
+### 4.3 What is the process of the algorithm?
+#### 4.3.1 Best Subset Selection
+1. Fit models using all subsets of $$p$$ predictors, that is, $$2^p$$ models in total.
+2. Select the best model from among $$2^p$$ possibilies, using cross-validated prediction error, Cp(AIC), BIC, or adjusted $$R^2$$
+
+#### 4.3.2 Forward Stepwise Selection
+1. Start with a null model, which contains no predictors
+2. Add one variable to the current model at a time, which the variable performs best among the models with the same amount of variables.
+3. Select a single best model from among the models from the step 2 (with different amount of variables, using cross-validated prediction error, Cp(AIC), BIC, or adjusted $$R^2$$
+
+#### 4.3.3 Backward Stepwise Selection
+1. Start with a full model, which contain all predictors
+2. Remove one variable from the current model at a time, which the variable performs best among the models with the same amount of variables.
+3. Select a single best model from among the models from the step 2 (with different amount of variables, using cross-validated prediction error, Cp(AIC), BIC, or adjusted $$R^2$$
+
+### 4.4 What is the cost function?
+Same as linear regression
+
+### 4.5 What are the Advantages and Disadvantages?
+**Advantages:**
+- Forward and Backward Selection have computational advantages over Best Subset Selection since total number of models considered is $$\frac{(p+1)p}{2}+1$$
+
+**Advantages:**
+- The best subset selection is a simple and conceptually appealing approach, if suffers from computational limitations. The number of total possible models grows rapidly. For p = 10,  there are approximately 1000 possible models to be considered; for p = 20, then there are over 1 million possibilities. If p >40, it is computationally infeasible.
+
+## 5. Logistic Regression
+### 5.1 What are the basic concepts/ What problem does it solve?
+Logistic Regression is a classification method, usually do binary classification, 0 or 1.
+
+A logistic model is one where the log-odds of the probability of an event is a linear combination of independent or predictor variables
+
+### 5.2 What are the assumptions?
