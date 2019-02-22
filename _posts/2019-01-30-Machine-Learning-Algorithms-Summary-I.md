@@ -24,7 +24,7 @@ Therefore, based on the definition above, I summarize five questions that we sho
 
 ### TOP 15 ALGORITHMS
 #### 1. Linear Regression
-#### 2. Regression with Lasso
+#### 2. Regression with 
 #### 3. Regression with Ridge
 #### 4. Stepwise Regression
 #### 5. Logistic Regression
@@ -89,9 +89,9 @@ and \$$\theta_0= \bar{y} - \theta_1 \bar{x}$$
 The same as linear regression
 
 ### 2.3 What is the process of the algorithm?
-Similar to linear regression, we want to find the best fit line: $$ \hat{y_i} = \theta_0 + \theta_1 x_i $$. However, we add an L1 penalty to the previous cost function, $$ L1= \sum_{i=1}^n |\theta_j| $$
+Similar to linear regression, we want to find the best fit line: $$ \hat{y_i} = \theta_0 + \theta_1 x_i $$. However, we add an L1 penalty to the previous cost function \$$ L1= \sum_{i=1}^n |\theta_j| $$
 
-That is, we want to find \$$ \hat{\theta} = \arg\min_{\theta} \frac{1}{n} \sum_{i=1}^n (y_i-\theta_0-x_i^T\theta)^2 + \lambda \sum_{j=1}^n |\theta_j| $$
+That is, we want to find \$$ \hat{\theta} = \arg\min_{\theta} \frac{1}{n} \sum_{i=1}^n (y_i-\theta_0-x_i^T\theta)^2+ \lambda\sum_{j=1}^n |\theta_j| $$
 
 `note: the penalty only penalize` $$\theta_1, \dots, \theta_n$$, `not` $$\theta_0$$
 
@@ -116,7 +116,7 @@ When $$\lambda \to \infty$$, Lasso makes all estimated coefficients nearly equal
 **Disadvantages:**
 - For n<p case (high dimensional case), Lasso can at most select n features.
 
-- For usual case, where we have correlated features (usually for real word datasets, such as gene data), LASSO selects only one feature from a group of correlated features, that is, Lasso doesn't help in grouped selection.
+- For usual case, where we have correlated features (usually for real word datasets, such as gene data), Lasso selects only one feature from a group of correlated features, that is, Lasso doesn't help in grouped selection.
 
 - For n>p case, it is often seen that Ridge outperforms Lasso for correlated features.
 
@@ -213,7 +213,9 @@ We use a cost function called **Cross-Entropy**, instead of Mean Squared Error, 
 
 Cross-entropy loss can be divided into two separate cost functions: one for $$y=1$$ and one for $$y=0$$.
 
-$$ J(\theta)= \frac{1}{n} \sum_{i=1}^n Cost(h_{\theta}(x_i), y_i) $$ \
-$$ Cost(h_{\theta}(x_i), y_i)= -log(h_{\theta}(x))  if y=1 \
-$$ Cost(h_{\theta}(x_i), y_i)= -log(h_{\theta}(x))  if y=0 \
+$$ J(\theta)= \frac{1}{n} \sum_{i=1}^n Cost(h_{\theta}(x_i), y_i) $$ 
+
+$$ Cost(h_{\theta}(x_i), y_i)= -log(h_{\theta}(x)) $$ if y=1
+
+$$ Cost(h_{\theta}(x_i), y_i)= -log(h_{\theta}(x)) $$ if y=0
 
