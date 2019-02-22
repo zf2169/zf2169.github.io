@@ -184,7 +184,7 @@ Same as linear regression
 **Advantages:**
 - Forward and Backward Selection have computational advantages over Best Subset Selection since total number of models considered is $$\frac{(p+1)p}{2}+1$$
 
-**Advantages:**
+**Disadvantages:**
 - The best subset selection is a simple and conceptually appealing approach, if suffers from computational limitations. The number of total possible models grows rapidly. For p = 10,  there are approximately 1000 possible models to be considered; for p = 20, then there are over 1 million possibilities. If p >40, it is computationally infeasible.
 
 ## 5. Logistic Regression
@@ -210,7 +210,6 @@ and choose a probability threshold to determine the outcome belong to a certain 
 
 ### 5.4 What is the cost function?
 We use a cost function called **Cross-Entropy**, instead of Mean Squared Error, also known as **Log Loss**. 
-
 Cross-entropy loss can be divided into two separate cost functions: one for $$y=1$$ and one for $$y=0$$.
 
 $$ J(\theta)= \frac{1}{n} \sum_{i=1}^n Cost(h_{\theta}(x_i), y_i) $$.
@@ -221,12 +220,26 @@ $$ Cost(h_{\theta}(x_i), y_i)= -log(1- h_{\theta}(x)) $$ if y=0
 
 Merging the above two cost functions into one line we have:
 $$
-\begin{eqnarray*}
+\begin{align*}
 J(\theta)&= \frac{1}{n} \sum_{i=1}^n Cost(h_{\theta} (x_i), y_i) \\
 &= \frac{1}{n} \sum_{i=1}^n [ y_i \log(h_{\theta}(x_i)) + (1-y_i)\log(1- h_{\theta}(x_i))]
-\end{eqnarray*}
+\end{align*}
 $$
 
+Cost function is achieved by maximum likelihood. 
 
+The difference between the cost function and the loss function: the loss function computes the error for a single training example; the cost function is the average of the loss function of the entire training set.
 
+### 5.5 What are the Advantages and Disadvantages?
+**Advantages:**
+- Outputs have a nice probabilistic interpretation, and the algorithm can be regularized to avoid overfitting. Logistic models can be updated easily with new data using stochastic gradient descent.
+- Linear combination of parameters β and the input vector will be incredibly easy to compute.
+- Convenient probability scores for observations
+- Efficient implementations available across tools
+- Multi-collinearity is not really an issue and can be countered with L2 regularization to an extent
+- Wide spread industry comfort for logistic regression solutions
+
+**Disadvantages:**
+- Logistic regression tends to underperform when there are multiple or non-linear decision boundaries. They are not flexible enough to naturally capture more complex relationships.
+- Cannot handle large number of categorical variables well
 
