@@ -189,7 +189,8 @@ Same as linear regression
 ### 5.1 What are the basic concepts/ What problem does it solve?
 **Basic concepts:** Logistic Regression is a classification method, usually do binary classification, 0 or 1.
 
-**Model:** The logistic model uses the logistic function (or sigmoid function) in order to enusre the value of outcome is between 0 and 1, which represents a possibility. \$$h_{\theta}(z)=\frac{1}{e^{-z}+1}$$ \\
+**Model:** The logistic model uses the logistic function (or sigmoid function) in order to enusre the value of outcome is between 0 and 1, which represents a possibility. \$$h_{\theta}(z)=\frac{1}{e^{-z}+1}$$
+
 where, z is usually a linear combination of predictors, $$z=g(x)=\Theta^T X = \theta_0+ \theta_1 x_1+ \dots+ \theta_n x_n$$
 
 In addition, $$z$$ can be more complex to make more flexible decision boundary.
@@ -209,7 +210,7 @@ and choose a probability threshold to determine the outcome belong to a certain 
 We use a cost function called **Cross-Entropy**, instead of Mean Squared Error, also known as **Log Loss**. 
 
 Cross-entropy loss can be divided into two separate cost functions: one for $$y=1$$ and one for $$y=0$$.
-\begin{equation}
+
 $$ J(\theta)= \frac{1}{n} \sum_{i=1}^n Cost(h_{\theta}(x_i), y_i)$$
 $$ Cost(h_{\theta}(x_i), y_i)= \left\{ \begin{split}
 -log(h_{\theta}(x))  if y=1 \\
