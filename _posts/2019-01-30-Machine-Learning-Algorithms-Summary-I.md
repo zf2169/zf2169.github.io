@@ -297,18 +297,18 @@ $$Posterior= \frac{Likelihood \cdot Proposition prior probability}{Evidence prio
 <p align="center">
   <img height="300" src="https://zf2169.github.io/img/naive_al_1.PNG">
   <br>
-  <a href="http://stat.columbia.edu/~porbanz/teaching/UN3106S18/slides_25Jan.pdf"> naive bayes classifiers - Columbia Statistics
+  <a href="http://stat.columbia.edu/~porbanz/teaching/UN3106S18/slides_25Jan.pdf"> naive bayes classifiers - Columbia Statistics </a>
   <br>
-  <img height="400" src="https://zf2169.github.io/img/naive1.PNG">
+  <img height="500" src="https://zf2169.github.io/img/naive1.PNG">
   <br>
-  <img height="400" src="https://zf2169.github.io/img/naive2.PNG">
+  <img height="500" src="https://zf2169.github.io/img/naive2.PNG">
   <br>
   <a href="https://www.globalsoftwaresupport.com/naive-bayes-classifier-explained-step-step/"> Naive Bayes Classifier Explained Step by Step </a>
 </p>
 
 ### 6.4 What is the cost function?
 <p align="center">
-  <img height="300" src="https://zf2169.github.io/img/naive_al_2.PNG">
+  <img height="400" src="https://zf2169.github.io/img/naive_al_2.PNG">
   <br>
   <a href="http://stat.columbia.edu/~porbanz/teaching/UN3106S18/slides_25Jan.pdf"> naive bayes classifiers - Columbia Statistics </a>
 </p>
