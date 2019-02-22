@@ -81,7 +81,7 @@ and \$$\theta_0= \bar{y} - \theta_1 \bar{x}$$
 ### 2.1 What are the basic concepts/ What problem does it solve? 
 - **Lasso** is a regularization method, usually used in **linear regression**, performing both variable selection and regularization to reduce overfitting.
 
-- Lasso uses L1 penalty when fitting the model, L1 penalty is the sum of the absolute values of the coefficients \$$L1= \sum_{i=1}^n |\theta_j|$$
+- Lasso uses L1 penalty when fitting the model, where $$L1= \sum_{i=1}^n |\theta_j|$$
 
 - Lasso can force regression coefficients to be exactly 0.
 
@@ -187,8 +187,31 @@ Same as linear regression
 
 ## 5. Logistic Regression
 ### 5.1 What are the basic concepts/ What problem does it solve?
-Logistic Regression is a classification method, usually do binary classification, 0 or 1.
+**Basic concepts:** Logistic Regression is a classification method, usually do binary classification, 0 or 1.
 
-A logistic model is one where the log-odds of the probability of an event is a linear combination of independent or predictor variables
+**Model:** The logistic model uses the logistic function (or sigmoid function) in order to enusre the value of outcome is between 0 and 1, which represents a possibility. \$$h_{\theta}(z)=\frac{1}{e^{-z}+1}$$ \\
+where, z is usually a linear combination of predictors, $$z=g(x)=\Theta^T X = \theta_0+ \theta_1 x_1+ \dots+ \theta_n x_n$$
+
+In addition, $$z$$ can be more complex to make more flexible decision boundary.
 
 ### 5.2 What are the assumptions?
+- The outcome is a binary or characteristic variable like yes vs no, positive vs negative, 1 vs 0.
+
+- There is no influential values (extreme values or outliers) in the continuous predictors.
+
+- There is no high intercorrelations (i.e. multicollinearity) among the predictors.
+
+### 5.3 What is the process of the algorithm?
+Fit the model \$$h_{\theta}(z)=\frac{1}{e^{-z}+1}$$ \\
+and choose a probability threshold to determine the outcome belong to a certain class (i.e >50% belong to "1")
+
+### 5.4 What is the cost function?
+We use a cost function called **Cross-Entropy**, instead of Mean Squared Error, also known as **Log Loss**. 
+
+Cross-entropy loss can be divided into two separate cost functions: one for $$y=1$$ and one for $$y=0$$.
+\$$ J(\theta)= \frac{1}{n} \sum_{i=1}^n Cost(h_{\theta}(x_i), y_i)$$
+\$$ Cost(h_{\theta}(x_i), y_i)= \left\{ \begin{split}
+-log(h_{theta}(x))  if y=1 \\
+-log(1- h_{theta}(x))  if y=0 \\
+\end{split} \right. $$
+
