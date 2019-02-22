@@ -262,3 +262,50 @@ As mentioned above, we can have different decision boundaries using different co
   <a href="https://www.coursera.org/learn/machine-learning/home/welcome"> Machine Learning by Standford University on Coursera </a> 
 </p>
 
+
+## 6. Naive Bayes
+### 6.1 What are the basic concepts/ What problem does it solve?
+The Naive Bayes Algorithm is a classification method. It is primarily used for text classification, which involves high-dimensional training datasets, i.e spam filtration, sentimental analysis, and classifying news articles.
+
+It learns the probability of an object with certain features belonging to a particular group in class, in short it is a probabilistic classifier.
+
+### 6.2 What are the assumptions?
+The Naive Bayes algorithm is called “naive” because it makes the assumption that the occurrence of a certain feature is independent of the occurrence of other features.
+
+#### Bayes' Theorem
+$$P(A \vert B)= \frac{P(B\vert A) P(A)}{P(B)}$$
+where $$A$$ and $$B$$ are events and $$P(B)\neq 0$$.
+- $$P(A\vert B)$$ is a conditional probability: the likelihood of event $$A$$ occurring given that $$B$$ is true.
+
+- $$P(B\vert A)$$ is a conditional probability: the likelihood of event $$B$$ occurring given that $$A$$ is true.
+
+- $$P(A)$$ and $$P(B)$$ are the probabilities of observing $$A$$ and $$B$$ independently of each other, also known as the marginal probability.
+
+#### Naive Bayes Theorem
+In Naive Bayes Theorem,
+- A:= proposition; B:= evidence
+
+- $$P(A)$$:= **prior** probability of proposition, $$P(B)$$ **prior** probability of evidence
+
+- $$P(A\vert B)$$:= **posterior**
+
+- $$P(B\vert A)$$:= **likelihood**
+
+$$Posterior= \frac{Likelihood \cdot Proposition prior probability}{Evidence prior probability}$$
+
+### 6.3 What is the process of the algorithm?
+<p align="center">
+  <img height="300" src="https://zf2169.github.io/img/naive_al_1.PNG">
+  <a href="http://stat.columbia.edu/~porbanz/teaching/UN3106S18/slides_25Jan.pdf"> naive bayes classifiers - Columbia Statistics
+  <img height="300" src="https://zf2169.github.io/img/naive1.PNG">
+  <br>
+  <img height="300" src="https://zf2169.github.io/img/naive2.PNG">
+  <br>
+  <a href="https://www.globalsoftwaresupport.com/naive-bayes-classifier-explained-step-step/"> Naive Bayes Classifier Explained Step by Step </a> 
+</p>
+
+### 6.4 What is the cost function?
+<p align="center">
+  <img height="300" src="https://zf2169.github.io/img/naive_al_2.PNG">
+  <a href="http://stat.columbia.edu/~porbanz/teaching/UN3106S18/slides_25Jan.pdf"> naive bayes classifiers - Columbia Statistics
+</p>
