@@ -81,7 +81,7 @@ and \$$\theta_0= \bar{y} - \theta_1 \bar{x}$$
 ### 2.1 What are the basic concepts/ What problem does it solve? 
 - **Lasso** is a regularization method, usually used in **linear regression**, performing both variable selection and regularization to reduce overfitting.
 
-- Lasso uses L1 penalty when fitting the model, L1 penalty is the sum of the absolute values of the coefficients \$$L1 = \sum_{j=1}^n |\theta_j| $$
+- Lasso uses L1 penalty when fitting the model, L1 penalty is the sum of the absolute values of the coefficients \$$L1= \sum_{i=1}^n |\theta_j|$$
 
 - Lasso can force regression coefficients to be exactly 0.
 
