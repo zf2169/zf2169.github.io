@@ -91,7 +91,7 @@ The same as linear regression
 ### 2.3 What is the process of the algorithm?
 Similar to linear regression, we want to find the best fit line: $$ \hat{y_i} = \theta_0 + \theta_1 x_i $$. However, we add an L1 penalty to the previous cost function \$$ L1= \sum_{i=1}^n |\theta_j| $$
 
-That is, we want to find \$$ \hat{\theta} = \arg\min_{\theta} \frac{1}{n} \sum_{i=1}^n (y_i-\theta_0-x_i^T\theta)^2+ \lambda \sum_{j=1}^n |\theta_j| $$
+That is, we want to find \$$ \hat{\theta} = \arg\min_{\theta} \frac{1}{n} \sum_{i=1}^n (y_i-\theta_0-x_i^T\theta)^2+ \lambda \sum_{j=1}^n \vert \theta_j \vert $$
 
 `note: the penalty only penalize` $$\theta_1, \dots, \theta_n$$, `not` $$\theta_0$$
 
@@ -220,11 +220,12 @@ $$ Cost(h_{\theta}(x_i), y_i)= -log(h_{\theta}(x)) $$ if y=1
 $$ Cost(h_{\theta}(x_i), y_i)= -log(1- h_{\theta}(x)) $$ if y=0
 
 Merging the above two cost functions into one line we have:
+$$
 \begin{eqnarray*}
-J(\theta)&= \frac{1}{m} \sum_{i=1}^n Cost(h_{\theta} (x_i), y_i)
-&= 
+J(\theta)&= \frac{1}{n} \sum_{i=1}^n Cost(h_{\theta} (x_i), y_i)
+&= \frac{1}{n} \sum_{i=1}^n \[ y_i \log(h_{\theta}(x_i)) + (1-y_i)\log(1- h_{\theta}(x_i)) \]
 \end{eqnarray*}
-
+$$
 
 
 
