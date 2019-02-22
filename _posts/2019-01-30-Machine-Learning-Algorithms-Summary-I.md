@@ -165,16 +165,21 @@ Same as linear regression
 ### 4.3 What is the process of the algorithm?
 #### 4.3.1 Best Subset Selection
 1. Fit models using all subsets of $$p$$ predictors, that is, $$2^p$$ models in total.
+
 2. Select the best model from among $$2^p$$ possibilies, using cross-validated prediction error, Cp(AIC), BIC, or adjusted $$R^2$$
 
 #### 4.3.2 Forward Stepwise Selection
 1. Start with a null model, which contains no predictors
+
 2. Add one variable to the current model at a time, which the variable performs best among the models with the same amount of variables.
+
 3. Select a single best model from among the models from the step 2 (with different amount of variables, using cross-validated prediction error, Cp(AIC), BIC, or adjusted $$R^2$$
 
 #### 4.3.3 Backward Stepwise Selection
 1. Start with a full model, which contain all predictors
+
 2. Remove one variable from the current model at a time, which the variable performs best among the models with the same amount of variables.
+
 3. Select a single best model from among the models from the step 2 (with different amount of variables, using cross-validated prediction error, Cp(AIC), BIC, or adjusted $$R^2$$
 
 ### 4.4 What is the cost function?
@@ -233,13 +238,18 @@ The difference between the cost function and the loss function: the loss functio
 ### 5.5 What are the Advantages and Disadvantages?
 **Advantages:**
 - Outputs have a nice probabilistic interpretation, and the algorithm can be regularized to avoid overfitting. Logistic models can be updated easily with new data using stochastic gradient descent.
+
 - Linear combination of parameters β and the input vector will be incredibly easy to compute.
+
 - Convenient probability scores for observations
+
 - Efficient implementations available across tools
+
 - Multi-collinearity is not really an issue and can be countered with L2 regularization to an extent
+
 - Wide spread industry comfort for logistic regression solutions
 
 **Disadvantages:**
 - Logistic regression tends to underperform when there are multiple or non-linear decision boundaries. They are not flexible enough to naturally capture more complex relationships.
-- Cannot handle large number of categorical variables well
 
+- Cannot handle large number of categorical variables well
