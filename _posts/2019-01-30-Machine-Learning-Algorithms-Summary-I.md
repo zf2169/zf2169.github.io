@@ -298,7 +298,7 @@ $$Posterior= \frac{Likelihood \cdot Proposition prior probability}{Evidence prio
   <img height="300" src="https://zf2169.github.io/img/naive_al_1.PNG">
   <br>
   <a href="http://stat.columbia.edu/~porbanz/teaching/UN3106S18/slides_25Jan.pdf"> naive bayes classifiers - Columbia Statistics </a>
-  <br>
+  <br> <br>
   <img height="500" src="https://zf2169.github.io/img/naive1.PNG">
   <br>
   <img height="500" src="https://zf2169.github.io/img/naive2.PNG">
@@ -312,3 +312,33 @@ $$Posterior= \frac{Likelihood \cdot Proposition prior probability}{Evidence prio
   <br>
   <a href="http://stat.columbia.edu/~porbanz/teaching/UN3106S18/slides_25Jan.pdf"> naive bayes classifiers - Columbia Statistics </a>
 </p>
+
+6.6 What are the Advantages and Disadvantages?
+**Advantages:**
+- It is easy and fast to predict class of test data set. It also perform well in multi class prediction.
+
+- When assumption of independence holds, a Naive Bayes classifier performs better compare to other models like logistic regression and you need less training data.
+
+- It perform well in case of categorical input variables compared to numerical variables, which is assumed normally distributed.
+
+**Disadvantages:**
+- If there is a category in the test dataset not observed in training data set, then model will assign a zero probability and cannot make a prediction. This is often known as “Zero Frequency”. To solve this, we can use the smoothing technique. One of the simplest smoothing techniques is called Laplace estimation.
+
+- Naive Bayes is also known as a bad estimator, so the predicted probability are not to be taken too seriously.
+
+- Naive Bayes is the assumption of independent predictors. In real life, it is almost impossible that we get a set of predictors which are completely independent.
+
+### 6.7 Additions of Naive Bayes
+#### 6.7.1 Variations of Naive Bayes
+- **Gaussian**: It is used in classification and it assumes that features follow a normal distribution.
+
+- **Multinomial**: It is used for discrete counts. 
+
+- **Bernoulli**: The binomial model is useful if your feature vectors are binary (i.e. zeros and ones) .Like the multinomial model, this model is popular for document classification tasks, where binary term occurrence features are used rather than term frequencies.
+
+#### 6.7.2 Some real-world applications of Naive Bayes
+- **Real time Prediction**: Naive Bayes is an eager learning classifier and it is sure fast. Thus, it could be used for making predictions in real time.
+
+- **Text classification/Spam Filtering/Sentiment Analysis**: Naive Bayes classifiers mostly used in text classification (due to better result in multi class problems and independence rule) have higher success rate as compared to other algorithms. As a result, it is widely used in Spam filtering (identify spam e-mail) and Sentiment Analysis (in social media analysis, to identify positive and negative customer sentiments)
+
+- **Recommendation System**: Naive Bayes Classifier and Collaborative Filtering together builds a Recommendation System that uses machine learning and data mining techniques to filter unseen information and predict whether a user would like a given resource or not
