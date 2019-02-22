@@ -222,8 +222,8 @@ $$ Cost(h_{\theta}(x_i), y_i)= -log(1- h_{\theta}(x)) $$ if y=0
 Merging the above two cost functions into one line we have:
 $$
 \begin{eqnarray*}
-J(\theta)&= \frac{1}{n} \sum_{i=1}^n Cost(h_{\theta} (x_i), y_i)
-&= \frac{1}{n} \sum_{i=1}^n \[ y_i \log(h_{\theta}(x_i)) + (1-y_i)\log(1- h_{\theta}(x_i)) \]
+J(\theta)&= \frac{1}{n} \sum_{i=1}^n Cost(h_{\theta} (x_i), y_i) \\
+&= \frac{1}{n} \sum_{i=1}^n [ y_i \log(h_{\theta}(x_i)) + (1-y_i)\log(1- h_{\theta}(x_i))]
 \end{eqnarray*}
 $$
 
