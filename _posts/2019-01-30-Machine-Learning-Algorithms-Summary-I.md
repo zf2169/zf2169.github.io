@@ -291,7 +291,7 @@ In Naive Bayes Theorem,
 
 - $$P(B\vert A)$$:= **likelihood**
 
-$$Posterior= \frac{Likelihood \cdot Proposition prior probability}{Evidence prior probability}$$
+$$Posterior= \frac{Likelihood \cdot Proposition \quad prior \quad probability}{Evidence \quad prior \quad probability}$$
 
 ### 6.3 What is the process of the algorithm?
 <p align="center">
