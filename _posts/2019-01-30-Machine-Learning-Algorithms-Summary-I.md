@@ -352,24 +352,26 @@ response classes (i.e. given $$Y$$ ), and then use **Bayes’ theorem** to flip 
 Same as Naive Bayes since it uses Bayes’ theorem in estimation.
 
 ### 7.3 What is the process of the algorithm?
-Recall the Bayes' Theorem,
-$$P(Y=k \vert X=x)= \frac{\pi_k f_k(x)}{\sum_{l=1}^K \pi_l f_l(x)}$$
+Recall the Bayes' Theorem, \$$P(Y=k \vert X=x)= \frac{\pi_k f_k(x)}{\sum_{l=1}^K \pi_l f_l(x)}$$
 
-where, K- number of classes, $$K \ge 2$$ and unordered
+where, $$K: $$ number of classes, $$K \ge 2$$ and unordered
 
 $$\pi_k: $$ the overall or **prior** probability that a randomly chosen observation comes from the $$k^{th}$$ class (this is the probability that a given observation is associated with the $$k^{th}$$ category of the response variable Y)
 
 $$fk(X) \equiv Pr(X = x \vert Y = k): $$ the density function of $$X$$ for an observation that comes from the $$k^{th}$$ class.
 
 <p align="center">
-  <img width="600" src="https://zf2169.github.io/img/lda1.PNG">
+  <img width="800" src="https://zf2169.github.io/img/lda1.PNG">
   <br>
-  <img width="600" src="https://zf2169.github.io/img/lda2.PNG">
+  <img width="800" src="https://zf2169.github.io/img/lda2.PNG">
+  <br>
+  <img width="800" src="https://zf2169.github.io/img/lda3.PNG">
+  <br>
+  <img width="800" src="https://zf2169.github.io/img/lda4.PNG">
+  <br>
+  <img width="800" src="https://zf2169.github.io/img/lda5.PNG">
   <br>
 </p>
-
-
-
 
 ### 7.4 What is the cost function?
 
