@@ -362,9 +362,9 @@ $$\pi_k: $$ the overall or **prior** probability that a randomly chosen observat
 $$fk(X) \equiv Pr(X = x \vert Y = k): $$ the density function of $$X$$ for an observation that comes from the $$k^{th}$$ class.
 
 <p align="center">
-  <img width=600" src="https://zf2169.github.io/img/lda1.PNG">
+  <img width="600" src="https://zf2169.github.io/img/lda1.PNG">
   <br>
-  <img width=600" src="https://zf2169.github.io/img/lda2.PNG">
+  <img width="600" src="https://zf2169.github.io/img/lda2.PNG">
   <br>
 </p>
 
