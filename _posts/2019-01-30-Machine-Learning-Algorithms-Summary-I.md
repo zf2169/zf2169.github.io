@@ -29,7 +29,7 @@ Therefore, based on the definition above, I summarize five questions that we sho
 #### 4. Stepwise Regression
 #### 5. Logistic Regression
 #### 6. Naive Bayes
-#### 7. K-Nearest Neighbors
+#### 7. LDA (Linear Discriminant Analysis)
 #### 8. SVM (Support Vector Machine)
 #### 9. K-means Clustering
 #### 10. Decision Tree
@@ -342,3 +342,35 @@ $$Posterior= \frac{Likelihood \cdot Proposition \quad prior \quad probability}{E
 - **Text classification/Spam Filtering/Sentiment Analysis**: Naive Bayes classifiers mostly used in text classification (due to better result in multi class problems and independence rule) have higher success rate as compared to other algorithms. As a result, it is widely used in Spam filtering (identify spam e-mail) and Sentiment Analysis (in social media analysis, to identify positive and negative customer sentiments)
 
 - **Recommendation System**: Naive Bayes Classifier and Collaborative Filtering together builds a Recommendation System that uses machine learning and data mining techniques to filter unseen information and predict whether a user would like a given resource or not
+
+## 7. LDA (Linear Discriminant Analysis)
+### 7.1 What are the basic concepts/ What problem does it solve?
+**LDA** is an alternative approach to logistic regression, we model the distribution of the predictors $$X$$ separately in each of the
+response classes (i.e. given $$Y$$ ), and then use **Bayes’ theorem** to flip these around into estimates for $$Pr(Y = k\vert X = x)$$.
+
+### 7.2 What are the assumptions?
+Same as Naive Bayes since it uses Bayes’ theorem in estimation.
+
+### 7.3 What is the process of the algorithm?
+Recall the Bayes' Theorem,
+$$P(Y=k \vert X=x)= \frac{\pi_k f_k(x)}{\sum_{l=1}^K \pi_l f_l(x)}$$
+
+where, K- number of classes, $$K \ge 2$$ and unordered
+
+$$\pi_k: $$ the overall or **prior** probability that a randomly chosen observation comes from the $$k^{th}$$ class (this is the probability that a given observation is associated with the $$k^{th}$$ category of the response variable Y)
+
+$$fk(X) \equiv Pr(X = x \vert Y = k): $$ the density function of $$X$$ for an observation that comes from the $$k^{th}$$ class.
+
+<p align="center">
+  <img width=600" src="https://zf2169.github.io/img/lda1.PNG">
+  <br>
+  <img width=600" src="https://zf2169.github.io/img/lda2.PNG">
+  <br>
+</p>
+
+
+
+
+### 7.4 What is the cost function?
+
+### 7.5 What are the advantages and disadvantages?
