@@ -349,7 +349,9 @@ $$Posterior= \frac{Likelihood \cdot Proposition \quad prior \quad probability}{E
 response classes (i.e. given $$Y$$ ), and then use **Bayes’ theorem** to flip these around into estimates for $$Pr(Y = k\vert X = x)$$.
 
 ### 7.2 What are the assumptions?
-Same as Naive Bayes since it uses Bayes’ theorem in estimation.
+- The observations in each class are drawn from a multivariate Gaussian distribution
+
+- The distribution of all classes have the same class-specific mean vector and a covariance matrix
 
 ### 7.3 What is the process of the algorithm?
 Recall the Bayes' Theorem, \$$P(Y=k \vert X=x)= \frac{\pi_k f_k(x)}{\sum_{l=1}^K \pi_l f_l(x)}$$
@@ -371,8 +373,19 @@ $$fk(X) \equiv Pr(X = x \vert Y = k): $$ the density function of $$X$$ for an ob
   <br>
   <img width="800" src="https://zf2169.github.io/img/lda5.PNG">
   <br>
+  <a href="https://www.amazon.com/Introduction-Statistical-Learning-Applications-Statistics/dp/1461471370"> An Introduction to Statistical Learning  with Applications in R-Springer </a>
 </p>
 
 ### 7.4 What is the cost function?
+Same as naive bayes.
 
 ### 7.5 What are the advantages and disadvantages?
+**Advantages:**
+- When the classes are well-separated, the parameter estimates for the logistic regression model are surprisingly unstable. LDA does not suffer from this problem.
+
+- If $$n$$ is small and the distribution of the predictors is approximately normal in each of the classes, LDA is again more stable than the logistic regression model.
+
+- LDA is popular when we have more than two response classes.
+
+**Disadvantages:**
+- LDA only gives decision boundaries, sometimes cannot fit complex dataset.
