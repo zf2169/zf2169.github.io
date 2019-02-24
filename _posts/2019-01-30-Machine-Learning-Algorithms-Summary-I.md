@@ -13,7 +13,7 @@ T := The goal of the algorithm(prediction/classification/cluster).\\
 P := The cost function of the algorithm.\\
 E := The process of the algorithm.
 
-Therefore, based on the definition above, I summarize five questions that we should ask to know about an algorithm and top 15 most popular machine learning algorithms. (**BIG 5 $$\times$$ TOP 15**)
+Therefore, based on the definition above, I summarize five questions that we should ask to know about an algorithm and top 20 most popular machine learning algorithms. (**BIG 5 $$\times$$ TOP 20**)
 ### BIG 5 QUESTIONS
 #### 1. What are the basic concepts/ What problem does it solve? 
 #### 2. What are the assumptions?
@@ -22,25 +22,29 @@ Therefore, based on the definition above, I summarize five questions that we sho
 #### 5. What are the advantages and disadvantages?
 
 
-### TOP 15 ALGORITHMS
+### TOP 20 ALGORITHMS
 #### 1. Linear Regression
-#### 2. Regression with 
+#### 2. Regression with Lasso
 #### 3. Regression with Ridge
 #### 4. Stepwise Regression
 #### 5. Logistic Regression
 #### 6. Naive Bayes
 #### 7. LDA (Linear Discriminant Analysis)
-#### 8. SVM (Support Vector Machine)
-#### 9. K-means Clustering
+#### 8. QDA (Quadratic Discriminant Analysis)
+#### 9. KNN (K-Nearest Neighbor)
 #### 10. Decision Tree
 #### 11. Gradient Boosting
 #### 12. Ada-Boost
 #### 13. Random Forest
 #### 14. Neural Network
-#### 15. PCA (Principal Component Analysis)
+#### 15. K-means Clustering
+#### 16. SVM (Support Vector Machine)
+#### 17. PCA (Principal Component Analysis)
+#### 18. Bias-Variance Trade-off
+#### 19. Learning Curves
+#### 20. Anomaly Detection
 
-
-# Part I: BIG 5 $$\times$$ TOP 15
+# Part I: TOP 20 $$\times$$ BIG 5
 ## 1. Linear Regression
 ### 1.1 What are the basic concepts/ What problem does it solve? 
 **Basic concepts**: A **linear** approach to model the relationship between continuous variables. '$$X$$'s are the predictors( or explanatory, or independent variables). '$$Y$$' is the outcome( or response, or dependent variable). \\ \\
@@ -388,4 +392,42 @@ Same as naive bayes.
 - LDA is popular when we have more than two response classes.
 
 **Disadvantages:**
-- LDA only gives decision boundaries, sometimes cannot fit complex dataset.
+- LDA only gives decision boundaries, sometimes cannot fit complex dataset, which means it will suffer from high bias.
+
+
+
+## 8. QDA (Quadratic Discriminant Analysis)
+### 8.1 What are the basic concepts/ What problem does it solve?
+**QDA** provides another alternative approach. Like LDA, the QDA classifier results from assuming that the observations from each class are drawn from a Gaussian distribution, and plugging estimates for the parameters into Bayes’ theorem in order to perform prediction. 
+
+### 8.2 What are the assumptions?
+- The observations in each class are drawn from a multivariate Gaussian distribution
+
+- Each class has its own covariance matrix.
+
+### 8.3 What is the process of the algorithm?
+QDA assumes that an observation from the $$k^{th}$$ class is of the form $$X \sim N(\mu_k, \Sigma_k)$$, where $$\Sigma_k$$ is a covariance matrix for the $$k^{th}$$ class. Under this assumption, the Bayes classifier assigns an observation $$X = x$$ to the class for which 
+\$$
+\sigma_k(x) = -\frac{1}{2}(x-\mu_k)^T \Sigma_k^{-1} (x-\mu_k)- \frac{1}{2} log \vert \Sigma_k \vert+ log\pi_k
+$$
+is largest. So the QDA classifier involves plugging estimates for $$\Sigma_k(x)$$, $$\mu_k$$, and $$\pi_k$$, and then assigning an observation $$X = x$$ to the class for which this quantity is largest. 
+
+The quantity $$x$$ appears as a quadratic function in, this is where QDA gets its name.
+
+### 8.4 What is the cost function?
+Same as naive bayes.
+
+### 8.5 What are the advantages and disadvantages? (LDA V.S QDA)
+**Advantages:**
+- QDA is recommended if the training set is very large if the assumption of a common covariance matrix for the $$K$$ classes is clearly
+untenable.
+
+**Disadvantages:**
+- QDA estimates a separate covariance matrix for each class, for a total of $$Kp(p+1)/2$$ parameters. So, if we have 50 predictors, then there are some multiple of 1225, which is a lot of parameters. But in LDA model, there are $$Kp$$ linear coefficients to estimate.
+
+- LDA is a much less flexible classifier than QDA, and so has substantially lower variance, potentially lead to improved
+prediction performance. 
+
+- LDA tends to be a better bet than QDA if there are relatively few training observations and so reducing variance is crucial.  
+
+
