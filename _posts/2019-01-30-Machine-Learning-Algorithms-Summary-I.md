@@ -406,11 +406,11 @@ Same as naive bayes.
 - Each class has its own covariance matrix.
 
 ### 8.3 What is the process of the algorithm?
-QDA assumes that an observation from the $$k^{th}$$ class is of the form $$X \sim N(\mu_k, \Sigma_k)$$, where $$\Sigma_k$$ is a covariance matrix for the $$k^{th}$$ class. Under this assumption, the Bayes classifier assigns an observation $$X = x$$ to the class for which 
-\$$
-\sigma_k(x) = -\frac{1}{2}(x-\mu_k)^T \Sigma_k^{-1} (x-\mu_k)- \frac{1}{2} log \vert \Sigma_k \vert+ log\pi_k
-$$
-is largest. So the QDA classifier involves plugging estimates for $$\Sigma_k(x)$$, $$\mu_k$$, and $$\pi_k$$, and then assigning an observation $$X = x$$ to the class for which this quantity is largest. 
+QDA assumes that an observation from the $$k^{th}$$ class is of the form $$X \sim N(\mu_k, \Sigma_k)$$, where $$\Sigma_k$$ is a covariance matrix for the $$k^{th}$$ class. 
+
+Under this assumption, the Bayes classifier assigns an observation $$X = x$$ to the class for which \$$ \sigma_k(x) = -\frac{1}{2}(x-\mu_k)^T \Sigma_k^{-1} (x-\mu_k)- \frac{1}{2} log \vert \Sigma_k \vert+ log\pi_k $$ is largest. 
+
+So the QDA classifier involves plugging estimates for $$\Sigma_k(x)$$, $$\mu_k$$, and $$\pi_k$$, and then assigning an observation $$X = x$$ to the class for which this quantity is largest. 
 
 The quantity $$x$$ appears as a quadratic function in, this is where QDA gets its name.
 
