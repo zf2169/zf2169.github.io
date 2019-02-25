@@ -35,20 +35,33 @@ These involve stratifying or segmenting the predictor space into a number of sim
 **Decision Tree** gets the name "tree" since the set of splitting rules used to segment the predictor space can be summarized in a tree.
 
 ### 10.2 What is the process of the algorithm?
-#### 10.2.1 Regression Tree (Recursive binary splitting for example)
+#### 10.2.1 Regression Tree (Recursive binary splitting)
 1. Select the predictor $$X_j$$ and the cutpoint $$s$$ such that splitting the predictor space into the regions $$\{X \vert X_j < s\}$$ and $$\{X \vert X_j \ge s \}$$ leads to the greatest possible reduction in RSS. 
-2. For any $$j$$ and $$s$$, we define the pair of half-planes \$$R_1(j, s) = \{X \vert X_j < s\}$$ and $$R_2(j, s) = \{X \vert X_j \ge s \}$$, and we seek the value of $$j$$ and $$s$$ that minimize the equation: \$$ \sum_{i:x_i\in R_1(j,s)} (y_i-\hat{y}_{R_1})^2$$
+2. For any $$j$$ and $$s$$, we define the pair of half-planes \$$R_1(j, s) = \{X \vert X_j < s\}$$ and $$R_2(j, s) = \{X \vert X_j \ge s \}$$, and we seek the value of $$j$$ and $$s$$ that minimize the equation: \$$ \sum_{i:x_i\in R_1(j,s)} (y_i-\hat{y_{R_1}})^2+ \sum_{i:x_i\in R_2(j,s)} (y_i-\hat{y_{R_2}})^2 $$
+where $$\hat{y_{R_1}}$$ is the mean response for the training observations in $$R_1(j, s)$$, $$\hat{y_{R_2}}$$ is the mean response for the training observations in $$R_2(j, s)$$.
 
+Finding the values of j and s can be done quite quickly, especially when the number of features $$p$$ is not too large.
 
-where ˆyR1 is the mean response for the training observations in R1(j, s),
-and ˆyR2 is the mean response for the training observations in R2(j, s).
-Finding the values of j and s that minimize can be done quite quickly,
-especially when the number of features p is not too large.
+3. Instead of splitting the entire predictor space, we split one of the two previously identified regions
 
-3. Repeat this process, looking for the best predictor and best cutpoint in order to split the data further so as to minimize the RSS within each of the resulting regions.
+4. Repeat the process, looking for the best predictor and best cutpoint in order to split the data further so as to minimize the RSS.
 
-4. The process contincues until a stopping criterion is reached: e.g. no region contains more than 5 observations.
+5. The process continues until a stopping criterion is reached; for instance, we may continue until no region contains more than five observations.
 
+#### 10.2.2 Classfication Tree (Recursive binary splitting)
+1. Select the predictor $$X_j$$ and the cutpoint $$s$$ such that splitting the predictor space into the regions $$\{X \vert X_j < s\}$$ and $$\{X \vert X_j \ge s \}$$ leads to the greatest possible reduction in Classification Error Rate: \$$E_R= \min_y \frac{1}{N_R} \sum_{1: X_i \in R} I(y_i \neq y)$$
+\$$N_R= #\{i: X_i \in R\}$$
+
+2. For any $$j$$ and $$s$$, we define the pair of half-planes \$$R_1(j, s) = \{X \vert X_j < s\}$$ and $$R_2(j, s) = \{X \vert X_j \ge s \}$$, and we seek the value of $$j$$ and $$s$$ that minimize the equation: \$$ \sum_{i:x_i\in R_1(j,s)} (y_i-\hat{y_{R_1}})^2+ \sum_{i:x_i\in R_2(j,s)} (y_i-\hat{y_{R_2}})^2 $$
+where $$\hat{y_{R_1}}$$ is the mean response for the training observations in $$R_1(j, s)$$, $$\hat{y_{R_2}}$$ is the mean response for the training observations in $$R_2(j, s)$$.
+
+Finding the values of j and s can be done quite quickly, especially when the number of features $$p$$ is not too large.
+
+3. Instead of splitting the entire predictor space, we split one of the two previously identified regions
+
+4. Repeat the process, looking for the best predictor and best cutpoint in order to split the data further so as to minimize the RSS.
+
+5. The process continues until a stopping criterion is reached; for instance, we may continue until no region contains more than five observations.
 
 
 ### 10.3 What is the cost function?
