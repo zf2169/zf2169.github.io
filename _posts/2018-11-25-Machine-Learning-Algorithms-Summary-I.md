@@ -7,10 +7,14 @@ date: 2018-11-25
 # Part 0
 ## 1.What is Machine Learning?
 Tom Mitchell in his book Machine Learning provides a definition in the opening line of the preface:
-> A computer program is said to learn from **experience E** with respect to some class of **tasks T** and **performance measure P**, if its performance at tasks in T, as measured by P, improves with experience E.\\ 
-where,\\
-T := The goal of the algorithm(prediction/classification/cluster).\\
-P := The cost function of the algorithm.\\
+> A computer program is said to learn from **experience E** with respect to some class of **tasks T** and **performance measure P**, if its performance at tasks in T, as measured by P, improves with experience E.
+
+where,
+
+T := The goal of the algorithm(prediction/classification/cluster).
+
+P := The cost function of the algorithm.
+
 E := The process of the algorithm.
 
 Therefore, based on the definition above, I summarize five questions that we should ask to know about an algorithm and top 20 most popular machine learning algorithms. (**BIG 5 $$\times$$ TOP 20**)
@@ -33,9 +37,9 @@ Therefore, based on the definition above, I summarize five questions that we sho
 #### 8. QDA (Quadratic Discriminant Analysis)
 #### 9. KNN (K-Nearest Neighbor)
 #### 10. Decision Tree
-#### 11. Gradient Boosting
-#### 12. Ada-Boost
-#### 13. Random Forest
+#### 11. Random Forest
+#### 12. Gradient Boosting
+#### 13. Ada-Boost
 #### 14. Neural Network
 #### 15. K-means Clustering
 #### 16. SVM (Support Vector Machine)
@@ -43,6 +47,7 @@ Therefore, based on the definition above, I summarize five questions that we sho
 #### 18. Bias-Variance Trade-off
 #### 19. Learning Curves
 #### 20. Anomaly Detection
+
 
 # Part I: TOP 20 $$\times$$ BIG 5
 ## 1. Linear Regression
