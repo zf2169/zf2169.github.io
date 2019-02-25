@@ -39,7 +39,9 @@ These involve stratifying or segmenting the predictor space into a number of sim
 1. Select the predictor $$X_j$$ and the cutpoint $$s$$ such that splitting the predictor space into the regions $$\{X \vert X_j < s\}$$ and $$\{X \vert X_j \ge s \}$$ leads to the greatest possible reduction in RSS. 
 2. For any $$j$$ and $$s$$, we define the pair of half-planes 
 
-$$R_1(j, s) = \{X \vert X_j < s\}$$ and $$R_2(j, s) = \{X \vert X_j \ge s \}$$, and we seek the value of $$j$$ and $$s$$ that minimize the equation: 
+$$R_1(j, s) = \{X \vert X_j < s\}$$ and $$R_2(j, s) = \{X \vert X_j \ge s \}$$, 
+
+and we seek the value of $$j$$ and $$s$$ that minimize the equation: 
 
 $$ \sum_{i:x_i\in R_1(j,s)} (y_i-\hat{y_{R_1}})^2+ \sum_{i:x_i\in R_2(j,s)} (y_i-\hat{y_{R_2}})^2 $$
 
@@ -57,8 +59,15 @@ Finding the values of j and s can be done quite quickly, especially when the num
 1. Select the predictor $$X_j$$ and the cutpoint $$s$$ such that splitting the predictor space into the regions $$\{X \vert X_j < s\}$$ and $$\{X \vert X_j \ge s \}$$ leads to the greatest possible reduction in Classification Error Rate: \$$E_R= \min_y \frac{1}{N_R} \sum_{1: X_i \in R} I(y_i \neq y)$$
 \$$N_R= #\{i: X_i \in R\}$$
 
-2. For any $$j$$ and $$s$$, we define the pair of half-planes \$$R_1(j, s) = \{X \vert X_j < s\}$$ and $$R_2(j, s) = \{X \vert X_j \ge s \}$$, and we seek the value of $$j$$ and $$s$$ that minimize the equation: \$$ \sum_{i:x_i\in R_1(j,s)} (y_i-\hat{y_{R_1}})^2+ \sum_{i:x_i\in R_2(j,s)} (y_i-\hat{y_{R_2}})^2 $$
-where $$\hat{y_{R_1}}$$ is the mean response for the training observations in $$R_1(j, s)$$, $$\hat{y_{R_2}}$$ is the mean response for the training observations in $$R_2(j, s)$$.
+2. For any $$j$$ and $$s$$, we define the pair of half-planes 
+
+$$R_1(j, s) = \{X \vert X_j < s\}$$ and $$R_2(j, s) = \{X \vert X_j \ge s \}$$, 
+
+and we seek the value of $$j$$ and $$s$$ that minimize the equation: 
+
+$$ \sum_{i:x_i\in R_1(j,s)} (y_i-\hat{y_{R_1}})^2+ \sum_{i:x_i\in R_2(j,s)} (y_i-\hat{y_{R_2}})^2 $$
+
+where $$\hat{y}_{R_1}$$ is the mean response for the training observations in $$R_1(j, s)$$, $$\hat{y_{R_2}}$$ is the mean response for the training observations in $$R_2(j, s)$$.
 
 Finding the values of j and s can be done quite quickly, especially when the number of features $$p$$ is not too large.
 
