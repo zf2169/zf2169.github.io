@@ -144,9 +144,9 @@ Summarize the algorithm as below:
 2. Apply cost complexity pruning to the large tree in order to obtain a sequence of best subtrees, as a function of $$\alpha$$.
 
 3. Use K-fold cross-validation to choose $$\alpha$$. That is, divide the training observations into $$K$$ folds. 
-For each $$k= 1, . . .,K:$$
-&nbsp;&nbsp; (a) Repeat Steps 1 and 2 on all but the kth fold of the training data.
-&nbsp;&nbsp; (b) Evaluate the mean squared prediction error on the data in the left-out $$k^{th}$$ fold, as a function of $$\alpha$$.
+For each $$k= 1, . . .,K:$$ <br />
+&nbsp;&nbsp; (a) Repeat Steps 1 and 2 on all but the kth fold of the training data. <br />
+&nbsp;&nbsp; (b) Evaluate the mean squared prediction error on the data in the left-out $$k^{th}$$ fold, as a function of $$\alpha$$. <br />
 &nbsp;&nbsp; Average the results for each value of $$\alpha$$, and pick α to minimize the average error.
 
 4. Return the subtree from Step 2 that corresponds to the chosen value of $$\alpha$$.
