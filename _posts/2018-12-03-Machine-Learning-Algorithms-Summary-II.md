@@ -133,11 +133,9 @@ $$\sum_{m=1}^{\vert T \vert} \sum_{i: x_i \in R_m} (y_i-\hat{y_{R_m}})^2+ \alpha
 
 is as small as possible. Here $$\vert T \vert$$ indicates the number of terminal nodes of the tree $$T$$, $$R_m$$ is the rectangle (i.e. the subset of predictor space) corresponding to the $$m^{th}$$ terminal node, and $$\hat{y_{R_m}}$$ is the predicted response associated with $$R_m$$.
 
-When $$\alpha = 0$$, then the subtree $$T$$ will simply equal $$T_0$$. 
+When $$\alpha = 0$$, then the subtree $$T$$ will simply equal $$T_0$$. As $$\alpha$$ increases, the above equation will tend to be minimized because there is a price to pay for having a tree with many terminal nodes.
 
-As $$\alpha$$ increases, the above equation will tend to be minimized because there is a price to pay for having a tree with many terminal nodes.
-
-Summarize the algorithm as below:
+- Summarize the algorithm as below:
 
 1. Use recursive binary splitting to grow a large tree on the training data, stopping only when each terminal node has fewer than some minimum number of observations.
 
@@ -145,19 +143,45 @@ Summarize the algorithm as below:
 
 3. Use K-fold cross-validation to choose $$\alpha$$. That is, divide the training observations into $$K$$ folds. 
 For each $$k= 1, . . .,K:$$ <br />
-&nbsp;&nbsp; (a) Repeat Steps 1 and 2 on all but the kth fold of the training data. <br />
-&nbsp;&nbsp; (b) Evaluate the mean squared prediction error on the data in the left-out $$k^{th}$$ fold, as a function of $$\alpha$$. <br />
-&nbsp;&nbsp; Average the results for each value of $$\alpha$$, and pick α to minimize the average error.
+&nbsp; (a) Repeat Steps 1 and 2 on all but the kth fold of the training data. <br />
+&nbsp; (b) Evaluate the mean squared prediction error on the data in the left-out $$k^{th}$$ fold, as a function of $$\alpha$$. <br />
+&nbsp; Average the results for each value of $$\alpha$$, and pick α to minimize the average error.
 
 4. Return the subtree from Step 2 that corresponds to the chosen value of $$\alpha$$.
 
 
 ## 11. Random Forest
 ### 11.1 What are the basic concepts/ What problem does it solve?
-### 11.2 What are the assumptions?
-### 11.3 What is the process of the algorithm?
-### 11.4 What is the cost function?
+Random Forest is an ensemble learning method for classification, regression and other tasks, that operate by constructing a multitude of decision trees at training time and outputing the class that is the mode of the classes (classification) or mean prediction (regression) of the individual trees.
+
+### 11.2 What is the process of the algorithm?
+Randm Forest applys bagging to the decision tree:
+
+- Bagging: random sampling with replacement from the original set to generate additional training data, the purpose of bagging is to reduce the variance while retaining the bias, it is effective because you are improving the accuracy of a single model by using multiple copies of it trained on different sets of data, but bagging is not recommended on models that have a high bias.
+
+- Randomly selection of m predictions: used in each split, we use a rule of thumb to determine the number of features selected $$m=\sqrt{p}$$, this process decorrelates the trees.
+
+- Each tree is grown to the largest extent possible and there is no pruning.
+
+- Predict new data by aggregating the predictions of the ntree trees (majority votes for classification, average for regression).
+
+
+### 11.3 What is the cost function?
+Same as Decision Tree
+
 ### 11.5 What are the advantages and disadvantages?
+**Advantages:**
+- The process of averaging or combining the results of different decision trees helps to overcome the problem of overfitting.
+
+- It outperforms a single decision tree in terms of variance when using for a large data set.
+
+- Random forest is extremely flexible and have very high accuracy.
+
+- It also maintains accuracy even when there are a lot of missing data.
+
+**Disadvantages:**
+- It is much harder and time-consuming to construct the tress and implement the prediction process than decision trees.
+- It also requires more computational resources and less intuitive. When you have a large collection of decision trees it is hard to have an intuitive grasp of the relationship existing in the input data.
 
 
 ## 12. Gradient Boosting
@@ -166,6 +190,8 @@ For each $$k= 1, . . .,K:$$ <br />
 ### 12.3 What is the process of the algorithm?
 ### 12.4 What is the cost function?
 ### 12.5 What are the advantages and disadvantages?
+**Advantages:**
+**Disadvantages:**
 
 
 ## 13. Ada-Boost
@@ -174,6 +200,8 @@ For each $$k= 1, . . .,K:$$ <br />
 ### 13.3 What is the process of the algorithm?
 ### 13.4 What is the cost function?
 ### 13.5 What are the advantages and disadvantages?
+**Advantages:**
+**Disadvantages:**
 
 
 ## 14. Neural Network
@@ -182,6 +210,8 @@ For each $$k= 1, . . .,K:$$ <br />
 ### 14.3 What is the process of the algorithm?
 ### 14.4 What is the cost function?
 ### 14.5 What are the advantages and disadvantages?
+**Advantages:**
+**Disadvantages:**
 
 
 ## 15. K-means Clustering
@@ -190,6 +220,8 @@ For each $$k= 1, . . .,K:$$ <br />
 ### 15.3 What is the process of the algorithm?
 ### 15.4 What is the cost function?
 ### 15.5 What are the advantages and disadvantages?
+**Advantages:**
+**Disadvantages:**
 
 
 ## 16. SVM (Support Vector Machine)
@@ -198,6 +230,8 @@ For each $$k= 1, . . .,K:$$ <br />
 ### 16.3 What is the process of the algorithm?
 ### 16.4 What is the cost function?
 ### 16.5 What are the advantages and disadvantages?
+**Advantages:**
+**Disadvantages:**
 
 
 ## 17. PCA (Principal Component Analysis)
@@ -206,6 +240,8 @@ For each $$k= 1, . . .,K:$$ <br />
 ### 17.3. What is the process of the algorithm?
 ### 17.4. What is the cost function?
 ### 17.5. What are the advantages and disadvantages?
+**Advantages:**
+**Disadvantages:**
 
 
 ## 18. Bias-Variance Trade-off
@@ -214,7 +250,8 @@ For each $$k= 1, . . .,K:$$ <br />
 ### 18.3. What is the process of the algorithm?
 ### 18.4. What is the cost function?
 ### 18.5. What are the advantages and disadvantages?
-
+**Advantages:**
+**Disadvantages:**
 
 ## 19. Learning Curves
 1. What are the basic concepts/ What problem does it solve?
