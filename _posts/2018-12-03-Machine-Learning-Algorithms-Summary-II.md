@@ -18,11 +18,14 @@ Finally, KNN applies Bayes rule and classifies the test observation $$x_0$$ to t
 ### 9.5 What are the advantages and disadvantages?
 **Advantages:**
 - Easy to interpret output
+
 - Naturally handles multi-class cases
+
 - Predictive power, can do well in practice with enough representative data
 
 **Disadvantages:**
 - Large search problem to find nearest neighbors
+
 - The choice of K has a drastic effect on the KNN classifier
 
 
@@ -34,11 +37,11 @@ These involve stratifying or segmenting the predictor space into a number of sim
 
 **Decision Tree** gets the name "tree" since the set of splitting rules used to segment the predictor space can be summarized in a tree.
 
-**terminal nodes/leaves:** the regions $$R_1, R_2, \cdots, R_K$$ 
+- **terminal nodes/leaves:** the regions $$R_1, R_2, \cdots, R_J$$ 
 
-**internal nodes:** the points along the tree where the predictor space is split
+- **internal nodes:** the points along the tree where the predictor space is split
 
-**branches:** the segments of the trees that connect the nodes
+- **branches:** the segments of the trees that connect the nodes
 
 
 ### 10.2 What is the process of the algorithm?
@@ -64,7 +67,7 @@ Finding the values of j and s can be done quite quickly, especially when the num
 5. The process continues until a stopping criterion is reached; for instance, we may continue until no region contains more than five observations.
 
 #### 10.2.2 Classfication Tree
-1. Select the predictor $$X_j$$ and the cutpoint $$s$$ such that splitting the predictor space into the regions $$\{X \vert X_j < s\}$$ and $$\{X \vert X_j \ge s \}$$ leads to the greatest possible reduction in $$Classification Error Rate$$: 
+1. Select the predictor $$X_j$$ and the cutpoint $$s$$ such that splitting the predictor space into the regions $$\{X \vert X_j < s\}$$ and $$\{X \vert X_j \ge s \}$$ leads to the greatest possible reduction in **Classification Error Rate:** 
 
 $$E= 1- \max_k (\hat{p}_{mk})$$
 
@@ -124,17 +127,17 @@ One way to avoid overfit in smaller trees is to build the tree only so long as t
 
 **Cost complexity pruning** is a method to select a small set of subtrees instead of estimating test error using cross-validation or the validation set approach for every possible subtree.
 
-- Rather than considering every possible subtree, we consider a sequence of trees indexed by a nonnegative tuning parameter $$\alpha$$. For each value of $$\alpha$$ there corresponds a subtree $$T \subset T_0$$ such that
+Rather than considering every possible subtree, we consider a sequence of trees indexed by a nonnegative tuning parameter $$\alpha$$. For each value of $$\alpha$$ there corresponds a subtree $$T \subset T_0$$ such that
 
 $$\sum_{m=1}^{\vert T \vert} \sum_{i: x_i \in R_m} (y_i-\hat{y_{R_m}})^2+ \alpha \vert T\vert$$
 
 is as small as possible. Here $$\vert T \vert$$ indicates the number of terminal nodes of the tree $$T$$, $$R_m$$ is the rectangle (i.e. the subset of predictor space) corresponding to the $$m^{th}$$ terminal node, and $$\hat{y_{R_m}}$$ is the predicted response associated with $$R_m$$.
 
-- When $$\alpha = 0$$, then the subtree $$T$$ will simply equal $$T_0$$. 
+When $$\alpha = 0$$, then the subtree $$T$$ will simply equal $$T_0$$. 
 
 As $$\alpha$$ increases, the above equation will tend to be minimized because there is a price to pay for having a tree with many terminal nodes.
 
-- Summarize the algorithm as below:
+Summarize the algorithm as below:
 
 1. Use recursive binary splitting to grow a large tree on the training data, stopping only when each terminal node has fewer than some minimum number of observations.
 
@@ -142,11 +145,8 @@ As $$\alpha$$ increases, the above equation will tend to be minimized because th
 
 3. Use K-fold cross-validation to choose $$\alpha$$. That is, divide the training observations into $$K$$ folds. 
 For each $$k= 1, . . .,K:$$
-
 &nbsp;&nbsp; (a) Repeat Steps 1 and 2 on all but the kth fold of the training data.
-
 &nbsp;&nbsp; (b) Evaluate the mean squared prediction error on the data in the left-out $$k^{th}$$ fold, as a function of $$\alpha$$.
-
 &nbsp;&nbsp; Average the results for each value of $$\alpha$$, and pick α to minimize the average error.
 
 4. Return the subtree from Step 2 that corresponds to the chosen value of $$\alpha$$.
