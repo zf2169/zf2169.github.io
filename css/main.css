@@ -1,4 +1,4 @@
-body { width: 100%; }
+body { margin: 20px auto; width: 100%; }
 
 menu { margin: 20px auto; width: 70%; }
 
@@ -73,7 +73,7 @@ cv-content { font-size: 16px; font-family: 'Merriweather', Georgia, Times; line-
 /* Create two equal columns that floats next to each other */
 .column {
   float: left;
-  width: 50%;
+  width: 49%;
   padding: 10px;
 }
 
@@ -128,7 +128,7 @@ cv-content { font-size: 16px; font-family: 'Merriweather', Georgia, Times; line-
 
 /* Place the container to the left */
 .left {
-  left: 0%;
+  left: -2%;
 }
 
 /* Place the container to the right */
