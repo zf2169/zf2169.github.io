@@ -62,7 +62,7 @@ img.avatar { margin-bottom: 30px; margin-right: 10px;}
 .maintext .post { font-size: 20px; font-family: "Times New Roman", 'Times', 'Serif'; line-height: 1.4em; }
 
 /*CV*/
-.cv { width: 70%; margin: 0 auto; }
+.cv { width: 100%; margin: 0 auto; }
 .cv-image { background-image: url("/img/cv_bg.jpeg"); background-color: #cccccc; height: 400px; background-position: center;
     background-repeat: no-repeat; background-size: cover; position: relative; }
 .cv-text { text-align: center; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
@@ -73,7 +73,7 @@ cv-content { font-size: 16px; font-family: 'Merriweather', Georgia, Times; line-
 /* Create two equal columns that floats next to each other */
 .cv .column {
   float: left;
-  width: 45%;
+  width: 50%;
   padding: 10px;
 }
 
@@ -128,7 +128,7 @@ cv-content { font-size: 16px; font-family: 'Merriweather', Georgia, Times; line-
 
 /* Place the container to the left */
 .left {
-  left: -5%;
+  left: 0%;
 }
 
 /* Place the container to the right */
