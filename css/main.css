@@ -73,7 +73,7 @@ cv-content { font-size: 16px; font-family: 'Merriweather', Georgia, Times; line-
 /* Create two equal columns that floats next to each other */
 .cv .column {
   float: left;
-  width: 50%;
+  width: 45%;
   padding: 10px;
 }
 
