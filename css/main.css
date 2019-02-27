@@ -47,7 +47,7 @@ h1l { font-size: 60px; font-family: Arial, Helvetica, sans-serif; }
 
 h1-large { font-size: 70px; font-family: Arial, Helvetica, sans-serif; }
 
-p1 { font-size: 1.5em; font-family: 'Merriweather', Georgia, Times; line-height: 1.4em; color: #333; }
+p1 { font-size: 1.5em; font-family: 'Merriweather', Georgia, Times; line-height: 1.6em; color: #333; }
 
 p2 { font-size: 22px; font-family: 'Merriweather', Georgia, Times; line-height: 1.4em; }
 
@@ -128,7 +128,7 @@ cv-content { font-size: 16px; font-family: 'Merriweather', Georgia, Times; line-
 
 /* Place the container to the left */
 .left {
-  left: 0;
+  left: -5%;
 }
 
 /* Place the container to the right */
