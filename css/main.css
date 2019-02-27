@@ -69,9 +69,9 @@ img.avatar { margin-bottom: 30px; margin-right: 10px;}
 /*CV*/
 .cv { margin: 0px auto; width: 100%; }
 
-cv-title { font-size: 20px; font-family: 'Merriweather', Georgia, Times; line-height: 1.4em; color: pink }
-cv-content { font-size: 16px; font-family: 'Merriweather', Georgia, Times; line-height: 1.4em; }
-cv-year { font-size: 22px; font-family: "Times New Roman", 'Times', 'Serif'; line-height: 1.4em; color: white }
+cv-title { font-size: 20px; font-family: 'Merriweather', Georgia, Times; line-height: 1.6em; color: pink }
+cv-content { font-size: 16px; font-family: 'Merriweather', Georgia, Times; line-height: 1.6em; }
+cv-year { font-size: 22px; font-family: "Times New Roman", 'Times', 'Serif'; line-height: 1.6em; color: white }
 
 /* Create two equal columns that floats next to each other */
 .column {
