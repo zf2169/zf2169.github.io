@@ -71,14 +71,14 @@ cv-title { font-size: 20px; font-family: 'Merriweather', Georgia, Times; line-he
 cv-content { font-size: 16px; font-family: 'Merriweather', Georgia, Times; line-height: 1.4em; }
 
 /* Create two equal columns that floats next to each other */
-.cv .column {
+.column {
   float: left;
   width: 50%;
   padding: 10px;
 }
 
 /* Clear floats after the columns */
-.cv .row:after {
+.row:after {
   content: "";
   display: table;
   clear: both;
