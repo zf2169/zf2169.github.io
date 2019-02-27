@@ -85,8 +85,15 @@ cv-content { font-size: 16px; font-family: 'Merriweather', Georgia, Times; line-
   clear: both;
 }
 
+.row * {
+  box-sizing: border-box;
+}
 
 /* The actual timeline (the vertical ruler) */
+.timeline * {
+  box-sizing: border-box;
+}
+
 .timeline {
   position: relative;
   max-width: 1200px;
