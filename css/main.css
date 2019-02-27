@@ -66,7 +66,7 @@ img.avatar { margin-bottom: 30px; margin-right: 10px;}
 .maintext .post { font-size: 20px; font-family: "Times New Roman", 'Times', 'Serif'; line-height: 1.4em; }
 
 /*CV*/
-.cv { box-sizing: border-box; margin: 10px auto; width: 100%; }
+.cv { margin: 0px auto; width: 100%; }
 
 cv-title { font-size: 20px; font-family: 'Merriweather', Georgia, Times; line-height: 1.4em; color: pink }
 cv-content { font-size: 16px; font-family: 'Merriweather', Georgia, Times; line-height: 1.4em; }
