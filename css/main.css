@@ -73,7 +73,7 @@ cv-content { font-size: 14px; font-family: 'Merriweather', Georgia, Times; line-
 /* Create two equal columns that floats next to each other */
 .cv .column {
   float: left;
-  width: 50%;
+  width: 35%;
   padding: 10px;
 }
 
@@ -128,7 +128,7 @@ cv-content { font-size: 14px; font-family: 'Merriweather', Georgia, Times; line-
 
 /* Place the container to the left */
 .left {
-  left: 0;
+  left: -15%;
 }
 
 /* Place the container to the right */
