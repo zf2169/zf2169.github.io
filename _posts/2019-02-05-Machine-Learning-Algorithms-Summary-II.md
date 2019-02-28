@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Machine Learning Algorithms Summary II"
-date: 2018-12-03
+date: 2019-02-05
 ---
 
 ## 9. KNN (K-Nearest Neighbors)
