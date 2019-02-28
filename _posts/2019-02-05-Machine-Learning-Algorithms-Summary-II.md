@@ -200,8 +200,13 @@ Consider first the regression setting, boosting involves combining a large numbe
 
 2. For $$b = 1, 2, \dots, B$$, repeat:  <br>
 &nbsp; (a) Fit a tree $$\hat{f^b}$$ with $$d$$ splits ($$d+1$$ terminal nodes) to the training data $$(X, r)$$. <br>
-&nbsp; (b) Update $$\hat{f}$$ by adding in a shrunken version of the new tree: \$$\hat{f}(x) \gets \hat{f}(x)+ \lambda \hat{f}b(x)$$. <br>
-&nbsp; (c) Update the residuals, \$$r_i \gets r_i- \lambda \hat{f^b}(x_i)$$
+&nbsp; (b) Update $$\hat{f}$$ by adding in a shrunken version of the new tree: 
+
+$$\hat{f}(x) \gets \hat{f}(x)+ \lambda \hat{f}b(x)$$. 
+
+&nbsp; (c) Update the residuals, 
+
+$$r_i \gets r_i- \lambda \hat{f^b}(x_i)$$
 
 3. Output the boosted model, \$$\hat{f}(x)= \sum_{b=1}^B \lambda \hat{f^b}(x)$$
 
