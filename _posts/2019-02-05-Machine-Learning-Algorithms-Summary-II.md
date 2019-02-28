@@ -160,11 +160,8 @@ Random Forest is an ensemble learning method for classification, regression and 
 Randm Forest applys bagging to the decision tree:
 
 - Bagging: random sampling with replacement from the original set to generate additional training data, the purpose of bagging is to reduce the variance while retaining the bias, it is effective because you are improving the accuracy of a single model by using multiple copies of it trained on different sets of data, but bagging is not recommended on models that have a high bias.
-
 - Randomly selection of m predictions: used in each split, we use a rule of thumb to determine the number of features selected $$m=\sqrt{p}$$, this process decorrelates the trees.
-
 - Each tree is grown to the largest extent possible and there is no pruning.
-
 - Predict new data by aggregating the predictions of the ntree trees (majority votes for classification, average for regression).
 
 
@@ -183,6 +180,7 @@ Same as Decision Tree
 
 **Disadvantages:**
 - It is much harder and time-consuming to construct the tress and implement the prediction process than decision trees.
+
 - It also requires more computational resources and less intuitive. When you have a large collection of decision trees it is hard to have an intuitive grasp of the relationship existing in the input data.
 
 <br>
@@ -200,10 +198,10 @@ Consider first the regression setting, boosting involves combining a large numbe
 
 1. Set $$\hat{f}(x)=0$$ and $$r_i= y_i$$ for all $$i$$ in the training set.
 
-2. For $$b = 1, 2, \dots, B$$, repeat:
-&nbsp; (a) Fit a tree $$\hat{f^b}$$ with $$d$$ splits ($$d+1$$ terminal nodes) to the training data $$(X, r)$$.
-&nbsp; (b) Update $$\hat{f}$$ by adding in a shrunken version of the new tree: \$$\hat{f}(x) \leftarrow	\hat{f}(x) + \lambda \hat{f}b(x)$$.
-&nbsp; (c) Update the residuals, \$$r_i \leftarrow r_i- \lambda \hat{f^b}(xi)$$
+2. For $$b = 1, 2, \dots, B$$, repeat:  <br>
+&nbsp; (a) Fit a tree $$\hat{f^b}$$ with $$d$$ splits ($$d+1$$ terminal nodes) to the training data $$(X, r)$$. <br>
+&nbsp; (b) Update $$\hat{f}$$ by adding in a shrunken version of the new tree: \$$\hat{f}(x) \leftarrow	\hat{f}(x) + \lambda \hat{f}b(x)$$. <br>
+&nbsp; (c) Update the residuals, \$$r_i \leftarrow r_i- \lambda \hat{f^b}(x_i)$$
 
 3. Output the boosted model, \$$\hat{f}(x)=  \sum_{b=1}^B \lambda \hat{f^b}(x)$$
 
