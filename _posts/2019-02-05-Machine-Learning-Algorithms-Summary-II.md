@@ -28,6 +28,7 @@ Finally, KNN applies Bayes rule and classifies the test observation $$x_0$$ to t
 
 - The choice of K has a drastic effect on the KNN classifier
 
+<br>
 
 ## 10. Decision Tree
 ### 10.1 What are the basic concepts/ What problem does it solve?
