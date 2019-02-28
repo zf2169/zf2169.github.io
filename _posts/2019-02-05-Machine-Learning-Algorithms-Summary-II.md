@@ -150,6 +150,7 @@ For each $$k= 1, . . .,K:$$ <br />
 
 4. Return the subtree from Step 2 that corresponds to the chosen value of $$\alpha$$.
 
+<br>
 
 ## 11. Random Forest
 ### 11.1 What are the basic concepts/ What problem does it solve?
@@ -184,7 +185,50 @@ Same as Decision Tree
 - It is much harder and time-consuming to construct the tress and implement the prediction process than decision trees.
 - It also requires more computational resources and less intuitive. When you have a large collection of decision trees it is hard to have an intuitive grasp of the relationship existing in the input data.
 
+<br>
 
+## 12. Boosting
+### 12.1 What are the basic concepts/ What problem does it solve?
+**Boosting** is general approach for improving the predictions resulting, which can be applied to many statistical learning methods for regression or classification, especially for decision trees.
+
+The main idea of boosting is to add new models to the ensemble sequentially: each tree is grown using information from previously
+grown trees. Boosting does not involve bootstrap sampling; instead each tree is fit on a modified version of the original data set. At each particular iteration, a new weak, base-learner model is trained with respect to the error of the whole ensemble learnt so far.
+
+
+### 12.2 What is the process of the algorithm?
+Consider first the regression setting, boosting involves combining a large number of decision trees, $$\hat{f^1}, \hat{f^2}, \dots, \hat{f^B}$$, boosting is described as below.
+
+1. Set $$\hat{f}(x)=0$$ and $$r_i= y_i$$ for all $$i$$ in the training set.
+
+2. For $$b = 1, 2, \dots, B$$, repeat:
+&nbsp; (a) Fit a tree $$\hat{f^b}$$ with $$d$$ splits ($$d+1$$ terminal nodes) to the training data $$(X, r)$$.
+&nbsp; (b) Update $$\hat{f}$$ by adding in a shrunken version of the new tree: \$$\hat{f}(x) \leftarrow	\hat{f}(x) + \lambda \hat{f}b(x)$$.
+&nbsp; (c) Update the residuals, \$$r_i \leftarrow r_i- \lambda \hat{f^b}(xi)$$
+
+3. Output the boosted model, \$$\hat{f}(x)=  \sum_{b=1}^B \lambda \hat{f^b}(x)$$
+
+*Note:* in boosting, unlike in bagging, the construction of each tree depends strongly on the trees that have already been grown.
+
+Boosting classification trees proceeds in a similar but slightly more complex way, it has three tuning parameters:
+- The number of trees $$B$$. Boosting can overfit if $$B$$ is too large, although this overfitting tends to occur slowly if at all. We use cross-validation to select $$B$$.
+- The shrinkage parameter $$\lambda$$, a small positive number. This controls the rate at which boosting learns. Typical values are 0.01 or 0.001, and the right choice can depend on the problem. Very small $$\lambda$$ can require using a very large value of $$B$$ in order to achieve good performance.
+- The number $$d$$ of splits in each tree, which controls the complexity of the boosted ensemble. More generally $$d$$ is the interaction depth, and controls the interaction order of the boosted model, since $$d$$ splits can involve depth at most $$d$$ variables.
+
+### 12.4 What is the cost function?
+It depends on the model, could be square loss or exponential loss. For any loss function, we can derive a gradient boosting algorithm. Absolute loss and Huber loss are more robust to outliers than square loss.
+
+### 12.5 What are the advantages and disadvantages?
+**Advantages:**
+- Although Boosting can overfit fit with higher number of trees, it generally gives somewhat better results than Random Forests if the three parameters are correctly tuned. 
+- Often provides predictive accuracy that cannot be beat.
+- It can optimize on different loss functions and provides several hyperparameter tunning options that make the function fit very flexible.
+- No data preprocessing required and can handles missing data.
+
+**Disadvantages:**
+- Boosting can overemphasize outliers and cause overfitting, we must use cross-validation to neuralize.
+- Boosting often requires many trees (>1000) which can be time and memory exhaustive.
+- The high flexibility results in many parameters that interact and influence heavily the behavior of the approach. This requires a large grid search during tunning.
+- Less interpretable although this is easily addressed with various tools (varaible importance, partial dependence plots, LIME, etc.)
 
 
 
