@@ -38,15 +38,15 @@ Therefore, based on the definition above, I summarize five questions that we sho
 #### 9. KNN (K-Nearest Neighbor)
 #### 10. Decision Tree
 #### 11. Random Forest
-#### 12. Gradient Boosting
-#### 13. Ada-Boost
-#### 14. Neural Network
-#### 15. K-means Clustering
-#### 16. SVM (Support Vector Machine)
-#### 17. PCA (Principal Component Analysis)
-#### 18. Bias-Variance Trade-off
-#### 19. Learning Curves
-#### 20. Anomaly Detection
+#### 12. Boosting
+#### 13. Neural Network
+#### 14. K-means Clustering
+#### 15. SVM (Support Vector Machine)
+#### 16. PCA (Principal Component Analysis)
+#### 17. Bias-Variance Trade-off
+#### 18. Learning Curves
+#### 19. Anomaly Detection
+#### 20. Gradient Descent
 
 
 # Part I: TOP 20 $$\times$$ BIG 5
