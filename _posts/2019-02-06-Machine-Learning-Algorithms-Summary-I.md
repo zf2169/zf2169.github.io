@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Machine Learning Algorithms Summary I"
-date: 2018-11-25
+date: 2019-02-06
 ---
 
 # Part 0
