@@ -200,10 +200,10 @@ Consider first the regression setting, boosting involves combining a large numbe
 
 2. For $$b = 1, 2, \dots, B$$, repeat:  <br>
 &nbsp; (a) Fit a tree $$\hat{f^b}$$ with $$d$$ splits ($$d+1$$ terminal nodes) to the training data $$(X, r)$$. <br>
-&nbsp; (b) Update $$\hat{f}$$ by adding in a shrunken version of the new tree: \$$\hat{f}(x) \leftarrow	\hat{f}(x) + \lambda \hat{f}b(x)$$. <br>
-&nbsp; (c) Update the residuals, \$$r_i \leftarrow r_i- \lambda \hat{f^b}(x_i)$$
+&nbsp; (b) Update $$\hat{f}$$ by adding in a shrunken version of the new tree: \$$\hat{f}(x) \gets \hat{f}(x)+ \lambda \hat{f}b(x)$$. <br>
+&nbsp; (c) Update the residuals, \$$r_i \gets r_i- \lambda \hat{f^b}(x_i)$$
 
-3. Output the boosted model, \$$\hat{f}(x)=  \sum_{b=1}^B \lambda \hat{f^b}(x)$$
+3. Output the boosted model, \$$\hat{f}(x)= \sum_{b=1}^B \lambda \hat{f^b}(x)$$
 
 *Note:* in boosting, unlike in bagging, the construction of each tree depends strongly on the trees that have already been grown.
 
@@ -218,14 +218,20 @@ It depends on the model, could be square loss or exponential loss. For any loss 
 ### 12.5 What are the advantages and disadvantages?
 **Advantages:**
 - Although Boosting can overfit fit with higher number of trees, it generally gives somewhat better results than Random Forests if the three parameters are correctly tuned. 
+
 - Often provides predictive accuracy that cannot be beat.
+
 - It can optimize on different loss functions and provides several hyperparameter tunning options that make the function fit very flexible.
+
 - No data preprocessing required and can handles missing data.
 
 **Disadvantages:**
 - Boosting can overemphasize outliers and cause overfitting, we must use cross-validation to neuralize.
+
 - Boosting often requires many trees (>1000) which can be time and memory exhaustive.
+
 - The high flexibility results in many parameters that interact and influence heavily the behavior of the approach. This requires a large grid search during tunning.
+
 - Less interpretable although this is easily addressed with various tools (varaible importance, partial dependence plots, LIME, etc.)
 
 
