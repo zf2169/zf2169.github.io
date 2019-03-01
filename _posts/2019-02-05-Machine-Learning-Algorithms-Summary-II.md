@@ -253,13 +253,13 @@ For K-class classification, there are $$K$$ units at the top, with the $$k^{th}$
 
 **Hidden Units** $$Z_m$$ are created from linear combinations of the inputs: \$$Z_m= \sigma(\alpha_{0m}+\alpha_m^T X), Z= (Z_1, Z_2, \dots, Z_M)$$
 
-And then the **target** $$Y_k$$ is modeled as a function of linear combinations of the $$Z_m$$, \$$T_k = \beta_{0k}+ \beta_k^T Z, k= 1, \dots, K,$$, \$$f_k(X) = g_k(T), k = 1, \dots, K$$
-
+And then the **target** $$Y_k$$ is modeled as a function of linear combinations of the $$Z_m$$, \$$T_k = \beta_{0k}+ \beta_k^T Z, k= 1, \dots, K$$, \$$f_k(X) = g_k(T), k = 1, \dots, K$$ <br>
 where $$Z = (Z_1, Z_2, \dots, Z_M)$$, and $$T = (T_1, T_2, \dots, T_K)$$.
 
 The **activation function** $$\sigma(v)$$ is usually chosen to be the sigmoid $$\sigma(v) = 1/(1+e^{-v}). Sometimes Gaussian radial basis functions are used.
 
 **Weights and Biases** between each layer W and b, weights tell you what kind of pattern this neuron in the second layer is picking up on; 
+
 
 ### 13.2 What is the process of the algorithm?
 #### 13.2.1 Training a neural network
@@ -315,14 +315,20 @@ where, $$\frac{\partial}{\partial \Theta_{jk}^{(l)}} J(\Theta)= D_{ij}^{(l)}$$
 ### 13.4 What are the advantages and disadvantages?
 **Advantages:**
 - Neural Network is able to learn and model non-linear and complex relationships in real-life data, which many of the relationships between inputs and outputs are non-linear as well as complex.
+
 - NNs can establish the model, generalize and predict on unseen data.
+
 - Unlike many other prediction techniques, ANN does not impose any restrictions on the input variables (like how they should be distributed). Additionally, many studies have shown that ANNs can better model heteroskedasticity i.e. data with high volatility and non-constant variance, given its ability to learn hidden relationships in teh data without imposing any fixed relationships in the data. This is something very useful in financial time series forcasting where data volatility is very high.
+
 - Significantly outperform other models when the conditions are right (lots of high quality labeled data).
 
 **Disadvantages:**
 - Hard to interpret the model because NNs are a black box model once they are trained.
+
 - Not work well on small data sets, where he Bayesian approaches do have an advantage here.
+
 - Hard to tune to ensure they learn well, and therefore hard to debug.
+
 - ANNs are computationally-expensive and time-consuming to train on very large datasets.
 
 <br>
