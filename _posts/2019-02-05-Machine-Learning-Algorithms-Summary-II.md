@@ -253,10 +253,10 @@ For K-class classification, there are $$K$$ units at the top, with the $$k^{th}$
 
 **Hidden Units** $$Z_m$$ are created from linear combinations of the inputs: \$$Z_m= \sigma(\alpha_{0m}+\alpha_m^T X), Z= (Z_1, Z_2, \dots, Z_M)$$
 
-And then the **target** $$Y_k$$ is modeled as a function of linear combinations of the $$Z_m$$, \$$T_k = \beta_{0k}+ \beta_k^T Z, k= 1, \dots, K$$, \$$f_k(X) = g_k(T), k = 1, \dots, K$$ <br>
+And then the **target** $$Y_k$$ is modeled as a function of linear combinations of the $$Z_m$$, \$$T_k = \beta_{0k}+ \beta_k^T Z$$, $$k= 1, \dots, K$$, \$$f_k(X) = g_k(T)$$, $$k= 1, \dots, K$$ <br>
 where $$Z = (Z_1, Z_2, \dots, Z_M)$$, and $$T = (T_1, T_2, \dots, T_K)$$.
 
-The **activation function** $$\sigma(v)$$ is usually chosen to be the sigmoid $$\sigma(v) = 1/(1+e^{-v}). Sometimes Gaussian radial basis functions are used.
+The **activation function** $$\sigma(v)$$ is usually chosen to be the sigmoid $$\sigma(v) = 1/(1+e^{-v})$$. Sometimes Gaussian radial basis functions are used.
 
 **Weights and Biases** between each layer W and b, weights tell you what kind of pattern this neuron in the second layer is picking up on; 
 
