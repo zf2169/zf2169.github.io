@@ -234,5 +234,122 @@ It depends on the model, could be square loss or exponential loss. For any loss 
 
 - Less interpretable although this is easily addressed with various tools (varaible importance, partial dependence plots, LIME, etc.)
 
+<br>
+
+
+## 13. Neural Network
+### 13.1. What are the basic concepts/ What problem does it solve?
+**Neural Network** is an algorithm that try to mimic the brain, where many simple units, called neurons, are interconnected by weighted links into larger structures of remarkably high performance. It was very widely used in 80s and early 90s; popularity diminished in late 90s.
+
+A neural network is nonlinear statistical, two-stage model applies both to regression or classification.
+
+<p align="center">
+  <img width="600" src="https://zf2169.github.io/img/neural_network.PNG">
+  <br>An example neural network consisting of two interconnected layers
+  <a href="https://link.springer.com/book/10.1007/978-3-319-63913-0"> - An Introduction to Machine Learning </a>  
+</p>
+
+For K-class classification, there are $$K$$ units at the top, with the $$k^{th}$$ unit modeling the probability of class k. There are $$K$$ target measurements $$Y_k, k = 1, \dots, K, each being coded as a 0-1 variable for the $$k^{th}$$ class.
+
+**Hidden Units** $$Z_m$$ are created from linear combinations of the inputs: \$$Z_m= \sigma(\alpha_{0m}+\alpha_m^T X), Z= (Z_1, Z_2, \dots, Z_M)$$
+
+And then the **target** $$Y_k$$ is modeled as a function of linear combinations of the $$Z_m$$, \$$T_k = \beta_{0k}+ \beta_k^T Z, k= 1, \dots, K,$$, \$$f_k(X) = g_k(T), k = 1, \dots, K$$
+
+where $$Z = (Z_1, Z_2, \dots, Z_M)$$, and $$T = (T_1, T_2, \dots, T_K)$$.
+
+The **activation function** $$\sigma(v)$$ is usually chosen to be the sigmoid $$\sigma(v) = 1/(1+e^{-v}). Sometimes Gaussian radial basis functions are used.
+
+**Weights and Biases** between each layer W and b, weights tell you what kind of pattern this neuron in the second layer is picking up on; 
+
+### 13.2 What is the process of the algorithm?
+#### 13.2.1 Training a neural network
+Pick a network architecture (connectivity pattern between neurons) 
+- No. of input units: Dimension of features 
+- No. output units: Number of classes 
+- Reasonable default: 1 hidden layer, or if >1 hidden layer, have same no. of hidden units in every layer (usually the more the better) 
+
+1. Randomly initialize weights
+
+2. Implement **forward propagation** to get $$h_{\Theta}(x^{(i)})$$ for any $$x^{(i)}$$
+
+3. Implement code to compute cost function $$J(\Theta)$$
+
+4. Implement backprop to compute partial derivatives $$\frac{\partial}{\partial \Theta_{jk}^{(l)}} J(\Theta)$$ <br>
+&nbsp; for i = 1:m <br>
+&nbsp; &nbsp;Perform forward propagation and **backpropagation** using example $$(x^{(i)}, y^{(i)})$$ <br>
+(Get activations $$a^{(l)}$$ and delta terms $$\delta^{(l)}$$ for $$l= 1,2,\dots, L$$.)
+
+5. Use gradient checking to compare $$\frac{\partial}{\partial \Theta_{jk}^{(l)}} J(\Theta)$$ computed using backpropagation vs. using  numerical estimate of gradient of $$J(\Theta)$$. <br>
+Then disable gradient checking code. 
+
+6. Use gradient descent or advanced optimization method with backpropagation to try to minimize $$J(\Theta)$$ as a function of parameters $$\Theta$$
+
+#### 13.2.1 Backpropagation
+Intuition: $$\delta_j^{(l)}=$$ "error" of node $$j$$ in layer $$l$$.
+
+Backpropagation algorithm:
+
+Training set $$\{(x^{(1)}, y^{(1)}), \dots, (x^{(m)}, y^{(m)}) \}$$
+
+Set $$\Delta_{ij}^{(l)}= 0$$ (for all $$l, i, j$$). 
+
+For $$i=1$$ to $$m$$ <br>
+&nbsp; Set $$a^{(1)}= x^{(i)}$$ <br>
+&nbsp; Perform forward propagation to compute $$a^{(l)}$$ for $$l= 1,2,\dots, L$$ <br>
+&nbsp; Using $$y^{(i)}$$, compute $$\delta^{(L)}= a^{(L)}- y^{(i)}$$ <br>
+&nbsp; Compute $$\delta^{(L-1)}, \delta^{(L-2)}, \dots, \delta^{(2)}$$<br>
+&nbsp; $$\Delta_{ij}^{(l)}:= \Delta_{ij}^{(l)}+ a_{j}^{(l)} \delta_{i}^{(l+1)}$$ <br>
+
+$$D_{ij}^{(l)}:= \frac{1}{m} \Delta_{ij}^{(l)}+ \lambda \Theta{ij}^{(l)}$$ if $$j\neq 0$$
+
+$$D_{ij}^{(l)}:= \frac{1}{m} \Delta_{ij}^{(l)}$$ if $$j= 0$$ <br>
+where, $$\frac{\partial}{\partial \Theta_{jk}^{(l)}} J(\Theta)= D_{ij}^{(l)}$$
+
+
+### 13.3 What is the cost function?
+<p align="center">
+  <img width="600" src="https://zf2169.github.io/img/nn_cost_function.PNG">
+</p>
+
+
+### 13.4 What are the advantages and disadvantages?
+**Advantages:**
+- Neural Network is able to learn and model non-linear and complex relationships in real-life data, which many of the relationships between inputs and outputs are non-linear as well as complex.
+- NNs can establish the model, generalize and predict on unseen data.
+- Unlike many other prediction techniques, ANN does not impose any restrictions on the input variables (like how they should be distributed). Additionally, many studies have shown that ANNs can better model heteroskedasticity i.e. data with high volatility and non-constant variance, given its ability to learn hidden relationships in teh data without imposing any fixed relationships in the data. This is something very useful in financial time series forcasting where data volatility is very high.
+- Significantly outperform other models when the conditions are right (lots of high quality labeled data).
+
+**Disadvantages:**
+- Hard to interpret the model because NNs are a black box model once they are trained.
+- Not work well on small data sets, where he Bayesian approaches do have an advantage here.
+- Hard to tune to ensure they learn well, and therefore hard to debug.
+- ANNs are computationally-expensive and time-consuming to train on very large datasets.
+
+<br>
+
+## 14. K-means Clustering
+### 14.1. What are the basic concepts/ What problem does it solve?
+### 14.2 What are the assumptions?
+### 14.3 What is the process of the algorithm?
+### 14.4 What is the cost function?
+### 14.5 What are the advantages and disadvantages?
+**Advantages:**
+**Disadvantages:**
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
