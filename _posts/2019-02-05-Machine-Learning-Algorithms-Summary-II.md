@@ -249,7 +249,7 @@ A neural network is nonlinear statistical, two-stage model applies both to regre
   <a href="https://link.springer.com/book/10.1007/978-3-319-63913-0"> - An Introduction to Machine Learning </a>  
 </p>
 
-For K-class classification, there are $$K$$ units at the top, with the $$k^{th}$$ unit modeling the probability of class k. There are $$K$$ target measurements $$Y_k, k = 1, \dots, K, each being coded as a 0-1 variable for the $$k^{th}$$ class.
+For K-class classification, there are $$K$$ units at the top, with the $$k^{th}$$ unit modeling the probability of class k. There are $$K$$ target measurements $$Y_k, k = 1, \dots, K$$, each being coded as a 0-1 variable for the $$k^{th}$$ class.
 
 **Hidden Units** $$Z_m$$ are created from linear combinations of the inputs: \$$Z_m= \sigma(\alpha_{0m}+\alpha_m^T X), Z= (Z_1, Z_2, \dots, Z_M)$$
 
