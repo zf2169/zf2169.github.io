@@ -382,11 +382,14 @@ where $$\phi_2$$ is the second principal component loading vector, with elements
 ### 14.4 What are the advantages and disadvantages?
 **Advantages:**
 - Reflects the intuition about the data.
+
 - Allows estimating probabilities in high-dimensional data, no need to assume independence.
+
 - Perform variable reduction, lead to faster processing and smaller storage.
 
 **Disadvantages:**
 - Too expensive for many applications.
+
 - The variance of each column can make big difference to the result, be sure to normalize the data at first.
 
 
