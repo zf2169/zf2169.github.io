@@ -339,7 +339,7 @@ where, $$\frac{\partial}{\partial \Theta_{jk}^{(l)}} J(\Theta)= D_{ij}^{(l)}$$
 
 ## 14. PCA (Principal Component Analysis) 
 ### 14.1. What are the basic concepts/ What problem does it solve?
-**PCA** is an unsupervised approach, since it involves only a set of features $X_1,X_2,\dots, X_p$, and no associated response
+**PCA** is an unsupervised approach, since it involves only a set of features $$X_1,X_2,\dots, X_p$$, and no associated response
 $$Y$$ . Apart from producing derived variables for use in supervised learning problems.
 
 **PCA** also serves as a tool for data visualization (visualization of the observations or visualization of the variables).
