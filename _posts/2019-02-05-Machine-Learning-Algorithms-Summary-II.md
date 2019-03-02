@@ -359,9 +359,9 @@ idea is that each of the $$n$$ observations lives in p-dimensional space, but no
 ### 14.3 What is the process of the algorithm?
 1. Given a $$n \times p$$ data set $$X$$, center each variable in $$X$$ to have mean zero (that is, the column means of X are zero). 
 2. Look for the linear combination of the sample feature values 
-of the form \$$ z_{i1}= \phi_{11}x_{i1}+ \phi_{21} x_{i2}+ \cdots+ \phi_{p1} x_{ip} $$ that has largest sample variance, subject to the constraint that $$ \sum_{j=1}^p \phi_{j1}^2= 1 $$. <br>
+of the form: \$$z_{i1}= \phi_{11}x_{i1}+ \phi_{21} x_{i2}+ \cdots+ \phi_{p1} x_{ip}$$ that has largest sample variance, subject to the constraint that $$\sum_{j=1}^p \phi_{j1}^2= 1$$. <br>
 In other words, the first principal component loading vector solves the optimization 
-problem \$$ \max_{\phi_{11},\cdots,\phi_{p1}} \frac{1}{n} \sum_{i=1}^n(\sum_{j=1}^p \phi_{j1} x_{ij})   s.t.  \sum_{j=1}^p \phi_{j1}^2= 1$$. <br>
+problem: \$$\max_{\phi_{11},\cdots,\phi_{p1}} \frac{1}{n} \sum_{i=1}^n(\sum_{j=1}^p \phi_{j1} x_{ij}) s.t. \sum_{j=1}^p \phi_{j1}^2= 1$$. <br>
 We refer to $$z_{11}, \dots, z_{n1}$$ as the **scores** of the first principal component.
 
 3. After the first principal component $$Z_1$$ of the features has been determined, we can find the second principal component Z2. The second principal component is the linear combination of $$X_1, \dots, X_p$$ that has maximal variance out of all linear combinations that are uncorrelated with $$Z_1$$. <br>
