@@ -337,15 +337,58 @@ where, $$\frac{\partial}{\partial \Theta_{jk}^{(l)}} J(\Theta)= D_{ij}^{(l)}$$
 
 <br>
 
-## 14. K-means Clustering
+## 14. PCA (Principal Component Analysis) 
 ### 14.1. What are the basic concepts/ What problem does it solve?
-### 14.2 What are the assumptions?
-### 14.3 What is the process of the algorithm?
-### 14.4 What is the cost function?
-### 14.5 What are the advantages and disadvantages?
-**Advantages:**
-**Disadvantages:**
+**PCA** is an unsupervised approach, since it involves only a set of features $X_1,X_2,\dots, X_p$, and no associated response
+$$Y$$ . Apart from producing derived variables for use in supervised learning problems.
 
+**PCA** also serves as a tool for data visualization (visualization of the observations or visualization of the variables).
+
+**PCA** provides a tool to find a low-dimensional representation of a data set that contains as much as possible of the variation. The
+idea is that each of the $$n$$ observations lives in p-dimensional space, but not all of these dimensions are equally interesting. 
+
+**PCA** seeks a small number of dimensions that are as interesting as possible, where the concept of interesting is measured by the amount that the observations vary along each dimension. Each of the dimensions found by PCA is a linear combination of the p features. 
+
+
+### 14.2 What are the assumptions?
+- Data should be large enough and be suitable for data reduction. 
+
+- No significant outliers. Outliers are important because these can have a disproportionate influence on your results.
+
+
+### 14.3 What is the process of the algorithm?
+1. Given a $$n \times p$$ data set $$X$$, center each variable in $$X$$ to have mean zero (that is, the column means of X are zero). 
+2. Look for the linear combination of the sample feature values of the form \$$z_{i1}= \phi_{11}x_{i1}+ \phi_{21}x_{i2}+\cdots+\phi_{p1}x_{ip}$$
+that has largest sample variance, subject to the constraint that $$\sum_{j=1}^p \o\phi_{j1}^2= 1$$
+
+In other words, the first principal component loading vector solves the optimization problem
+
+\$$ \max_{\phi_{11},\cdots,\phi_{p1}} \frac{1}{n} \sum_{i=1}^n(\sum_{j=1}^p \phi_{j1} x_{ij})   s.t.  \sum_{j=1}^p \o\phi_{j1}^2= 1$$
+
+We refer to $$z_{11}, \dots, z_{n1}$$ as the **scores** of the first principal component.
+
+3. After the first principal component $$Z_1$$ of the features has been determined, we can find the second principal component Z2. The second principal component is the linear combination of $$X_1, \dots, X_p$$ that has maximal variance out of all linear combinations that are uncorrelated with $$Z_1$$. The second principal component scores $$z_{12}, z_{22}, \dots, z_{n2}$$ take the form \$$z_{i2}= \phi_{12}x_{i1}+ \phi_{22}x_{i2}+\cdots+\phi_{p2}x_{ip}$$
+
+where $$\phi_2$$ is the second principal component loading vector, with elements $$\phi_{12}, \phi_{22}, \dots, \phi_{p2}$$. It turns out that constraining $$Z_2$$ to be uncorrelated with $$Z_1$$ is equivalent to constraining the direction $$\phi_{1}$$ to be orthogonal (perpendicular) to the direction $$\phi_{1}$$.
+
+4. In a larger data set with $$p > 2$$ variables, there are multiple distinct principal components, and they are defined in a similar manner.
+
+5. Once we have computed the principal components, we can plot them against each other in order to produce low-dimensional views of the data. For instance, we can plot the score vector $$Z_1$$ against $$Z_2$$, $$Z_1$$ against $$Z_3$$, $$Z_2$$ against $$Z_3$$, and so forth. Geometrically, this amounts to projecting the original data down onto the subspace spanned by $$\phi_1, \phi_2$$, and $$\phi_3$$, and plotting the projected points.
+
+<p align="center">
+  <img width="600" src="https://zf2169.github.io/img/pca_summary.PNG">
+</p>
+
+
+### 14.4 What are the advantages and disadvantages?
+**Advantages:**
+- Reflects the intuition about the data.
+- Allows estimating probabilities in high-dimensional data, no need to assume independence.
+- Perform variable reduction, lead to faster processing and smaller storage.
+
+**Disadvantages:**
+- Too expensive for many applications.
+- The variance of each column can make big difference to the result, be sure to normalize the data at first.
 
 
 
