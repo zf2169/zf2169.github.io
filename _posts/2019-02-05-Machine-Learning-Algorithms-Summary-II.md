@@ -405,7 +405,7 @@ Data has to be numeric, not categorical.
 
 Let $$C_1, \dots, C_K$$ denote sets containing the indices of the observations in each cluster. These sets satisfy two properties:
 1. $$C1 \cup C2 \cup \dots \cup C_K = \{1,\dots,n \}$$. In other words, each observation belongs to at least one of the $$K$$ clusters.
-2. $$C_k \cap C_{k'} = \emptyset for all $$k \neq k'$$. In other words, the clusters are nonoverlapping: no observation belongs to more than one cluster.
+2. $$C_k \cap C_{k'} = \emptyset$$ for all $$k \neq k'$$. In other words, the clusters are nonoverlapping: no observation belongs to more than one cluster.
 
 ### 15.3 What is the process of the algorithm?
 1. Randomly assign a number, from 1 to K, to each of the observations.  <br>
@@ -417,8 +417,8 @@ These serve as initial cluster assignments for the observations.
 
 
 ### 15.4 What is the cost function?
-- We want to partition the observations into $$K$$ clusters such that the total within-cluster variation, summed over all $$K$$ clusters, is as small as possible. That is, we want to solve the problem: \$$\min_{C_1,\dots,C_K}\sum_{k=1}^K W(C_k)$$
-- Define the within-cluster variation, involving squared Euclidean distance:\$$W(C_k)= \frac{1}{\vert C_k\vert}\sum_{i,i'\in C_k}\sum_{j=1}^p (x_{ij}-x_{i'j})^2$$.
+- We want to partition the observations into $$K$$ clusters such that the total within-cluster variation, summed over all $$K$$ clusters, is as small as possible. That is, we want to solve the problem: \$$\min_{C_1,\dots,C_K}\sum_{k=1}^K W(C_k)$$.
+- Define the within-cluster variation, involving squared Euclidean distance:\$$W(C_k)= \frac{1}{\vert C_k\vert} \sum_{i,i' \in C_k} \sum_{j=1}^p (x_{ij}-x_{i'j})^2$$. 
 where $$\vert Ck\vert$$ denotes the number of observations in the $$k^{th}$$ cluster. In other words, the within-cluster variation for the $$k^{th}$$ cluster is the sum of all of the pairwise squared Euclidean distances between the observations in the $$k^{th}$$ cluster, divided by the total number of observations in the $$k^{th}$$ cluster.
 - Combining above two formulas, we give the optimization problem that defines K-means clustering: \$$\min_{C_1,\dots,C_K}\sum_{k=1}^K \frac{1}{\vert C_k\vert}\sum_{i,i'\in C_k}\sum_{j=1}^p (x_{ij}-x_{i'j})^2 $$
 
