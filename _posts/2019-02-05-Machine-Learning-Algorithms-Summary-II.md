@@ -337,8 +337,83 @@ where, $$\frac{\partial}{\partial \Theta_{jk}^{(l)}} J(\Theta)= D_{ij}^{(l)}$$
 
 <br>
 
-## 14. PCA (Principal Component Analysis) 
-### 14.1. What are the basic concepts/ What problem does it solve?
+## 14. K-means Clustering
+### 14.1 What are the basic concepts/ What problem does it solve?
+**K-means clustering** is a well-known, simple and elegant clustering method, approach for partitioning a data set into $$K$$ distinct, non-overlapping clusters. To perform K-means clustering, we must first specify the desired number of clusters K; then the K-means algorithm will assign each observation to exactly one of the K clusters. 
+
+Clustering refers to a very broad set of techniques for finding homogeneous subgroups, or clusters among the observations.
+
+
+### 14.2 What are the assumptions?
+Data has to be numeric, not categorical.
+
+Let $$C_1, \dots, C_K$$ denote sets containing the indices of the observations in each cluster. These sets satisfy two properties:
+1. $$C1 \cup C2 \cup \dots \cup C_K = \{1,\dots,n \}$$. In other words, each observation belongs to at least one of the $$K$$ clusters.
+2. $$C_k \cap C_{k'} = \emptyset$$ for all $$k \neq k'$$. In other words, the clusters are nonoverlapping: no observation belongs to more than one cluster.
+
+### 14.3 What is the process of the algorithm?
+1. Randomly assign a number, from 1 to K, to each of the observations.  <br>
+These serve as initial cluster assignments for the observations.
+
+2. Iterate until the cluster assignments stop changing: <br>
+  (a) For each of the K clusters, compute the cluster centroid. The $$k^{th}$$ cluster centroid is the vector of the $$p$$ feature means for the observations in the $$k^{th}$$ cluster. <br>
+  (b) Assign each observation to the cluster whose centroid is closest (where closest is defined using **Euclidean distance**).
+
+
+### 14.4 What is the cost function?
+- We want to partition the observations into $$K$$ clusters such that the total within-cluster variation, summed over all $$K$$ clusters, is as small as possible. That is, we want to solve the problem: <br>
+\$$\min_{C_1,\dots,C_K}\sum_{k=1}^K W(C_k)$$.
+
+- Define the within-cluster variation, involving squared Euclidean distance: \$$W(C_k)= \frac{1}{\vert C_k\vert} \sum_{i,i' \in C_k} \sum_{j=1}^p (x_{ij}-x_{i'j})^2$$.
+
+where $$\vert Ck\vert$$ denotes the number of observations in the $$k^{th}$$ cluster. In other words, the within-cluster variation for the $$k^{th}$$ cluster is the sum of all of the pairwise squared Euclidean distances between the observations in the $$k^{th}$$ cluster, divided by the total number of observations in the $$k^{th}$$ cluster.
+
+- Combining above two formulas, we give the optimization problem that defines K-means clustering: \$$\min_{C_1,\dots,C_K}\sum_{k=1}^K \frac{1}{\vert C_k\vert}\sum_{i,i'\in C_k}\sum_{j=1}^p (x_{ij}-x_{i'j})^2 $$
+
+
+### 14.5 What are the advantages and disadvantages?
+**Advantages:**
+- Easy to implement and easy to interpret the clustering results.
+
+- K-means is fast and efficient, in terms of computational cost.
+
+**Disadvantages:**
+- Sensitive to outliers
+
+- Initial centroids are randomly selected and have a strong impact on the final results. 
+
+- K-the number of clusters are not known, it's sometimes difficult to choose the best number.
+
+- Scaling your datasets or not (normalization or standardization) will completely change results.
+
+- It does not work well with clusters (in the original data) of different size and different density.
+
+
+
+## 15. SVM (Support Vector Machine)
+### 15.1 What are the basic concepts/ What problem does it solve?
+
+
+### 15.2 What are the assumptions?
+
+
+### 15.3 What is the process of the algorithm?
+
+
+### 15.4 What is the cost function?
+
+
+### 15.5 What are the advantages and disadvantages?
+**Advantages:**
+
+
+**Disadvantages:**
+
+
+<br>
+
+## 16. PCA (Principal Component Analysis) 
+### 16.1. What are the basic concepts/ What problem does it solve?
 **PCA** is an unsupervised approach, since it involves only a set of features $$X_1,X_2,\dots, X_p$$, and no associated response
 $$Y$$ . Apart from producing derived variables for use in supervised learning problems.
 
@@ -350,13 +425,13 @@ idea is that each of the $$n$$ observations lives in p-dimensional space, but no
 **PCA** seeks a small number of dimensions that are as interesting as possible, where the concept of interesting is measured by the amount that the observations vary along each dimension. Each of the dimensions found by PCA is a linear combination of the p features. 
 
 
-### 14.2 What are the assumptions?
+### 16.2 What are the assumptions?
 - Data should be large enough and be suitable for data reduction. 
 
 - No significant outliers. Outliers are important because these can have a disproportionate influence on your results.
 
 
-### 14.3 What is the process of the algorithm?
+### 16.3 What is the process of the algorithm?
 1. Given a $$n \times p$$ data set $$X$$, center each variable in $$X$$ to have mean zero (that is, the column means of X are zero). 
 2. Look for the linear combination of the sample feature values of the form: <br>
 &nbsp;&nbsp;&nbsp;&nbsp; $$z_{i1}= \phi_{11}x_{i1}+ \phi_{21} x_{i2}+ \cdots+ \phi_{p1} x_{ip}$$  <br>
@@ -379,7 +454,7 @@ where $$\phi_2$$ is the second principal component loading vector, with elements
 </p>
 
 
-### 14.4 What are the advantages and disadvantages?
+### 16.4 What are the advantages and disadvantages?
 **Advantages:**
 - Reflects the intuition about the data.
 
@@ -391,62 +466,6 @@ where $$\phi_2$$ is the second principal component loading vector, with elements
 - Too expensive for many applications.
 
 - The variance of each column can make big difference to the result, be sure to normalize the data at first.
-
-
-## 15. K-means Clustering
-### 15.1 What are the basic concepts/ What problem does it solve?
-**K-means clustering** is a well-known, simple and elegant clustering method, approach for partitioning a data set into $$K$$ distinct, non-overlapping clusters. To perform K-means clustering, we must first specify the desired number of clusters K; then the K-means algorithm will assign each observation to exactly one of the K clusters. 
-
-Clustering refers to a very broad set of techniques for finding homogeneous subgroups, or clusters among the observations.
-
-
-### 15.2 What are the assumptions?
-Data has to be numeric, not categorical.
-
-Let $$C_1, \dots, C_K$$ denote sets containing the indices of the observations in each cluster. These sets satisfy two properties:
-1. $$C1 \cup C2 \cup \dots \cup C_K = \{1,\dots,n \}$$. In other words, each observation belongs to at least one of the $$K$$ clusters.
-2. $$C_k \cap C_{k'} = \emptyset$$ for all $$k \neq k'$$. In other words, the clusters are nonoverlapping: no observation belongs to more than one cluster.
-
-### 15.3 What is the process of the algorithm?
-1. Randomly assign a number, from 1 to K, to each of the observations.  <br>
-These serve as initial cluster assignments for the observations.
-
-2. Iterate until the cluster assignments stop changing: <br>
-  (a) For each of the K clusters, compute the cluster centroid. The $$k^{th}$$ cluster centroid is the vector of the $$p$$ feature means for the observations in the $$k^{th}$$ cluster. <br>
-  (b) Assign each observation to the cluster whose centroid is closest (where closest is defined using **Euclidean distance**).
-
-
-### 15.4 What is the cost function?
-- We want to partition the observations into $$K$$ clusters such that the total within-cluster variation, summed over all $$K$$ clusters, is as small as possible. That is, we want to solve the problem: <br>
-\$$\min_{C_1,\dots,C_K}\sum_{k=1}^K W(C_k)$$.
-
-- Define the within-cluster variation, involving squared Euclidean distance: \$$W(C_k)= \frac{1}{\vert C_k\vert} \sum_{i,i' \in C_k} \sum_{j=1}^p (x_{ij}-x_{i'j})^2$$.
-
-where $$\vert Ck\vert$$ denotes the number of observations in the $$k^{th}$$ cluster. In other words, the within-cluster variation for the $$k^{th}$$ cluster is the sum of all of the pairwise squared Euclidean distances between the observations in the $$k^{th}$$ cluster, divided by the total number of observations in the $$k^{th}$$ cluster.
-
-- Combining above two formulas, we give the optimization problem that defines K-means clustering: \$$\min_{C_1,\dots,C_K}\sum_{k=1}^K \frac{1}{\vert C_k\vert}\sum_{i,i'\in C_k}\sum_{j=1}^p (x_{ij}-x_{i'j})^2 $$
-
-
-### 15.5 What are the advantages and disadvantages?
-**Advantages:**
-- Easy to implement and easy to interpret the clustering results.
-
-- K-means is fast and efficient, in terms of computational cost.
-
-**Disadvantages:**
-- Sensitive to outliers
-
-- Initial centroids are randomly selected and have a strong impact on the final results. 
-
-- K-the number of clusters are not known, it's sometimes difficult to choose the best number.
-
-- Scaling your datasets or not (normalization or standardization) will completely change results.
-
-- It does not work well with clusters (in the original data) of different size and different density.
-
-
-
-
 
 
 
