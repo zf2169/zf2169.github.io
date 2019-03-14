@@ -392,18 +392,53 @@ where $$\vert Ck\vert$$ denotes the number of observations in the $$k^{th}$$ clu
 
 ## 15. SVM (Support Vector Machine)
 ### 15.1 What are the basic concepts/ What problem does it solve?
+**SVM** constructs a hyperplane or set of hyperplanes in a high- or infinite-dimensional space, which can be used for classification, regression, or other tasks like outliers detection. It is an alternative view of logistic regression.
+
+One reasonable choice as the best hyperplane is the one that represents the largest separation, or margin, between the two classes. So we choose the hyperplane so that the distance from it to the nearest data point on each side is maximized. If such a hyperplane exists, it is known as the **maximum-margin hyperplane** and the linear classifier it defines is known as a maximum-margin classifier.
 
 
-### 15.2 What are the assumptions?
+### 15.2 What is the process of the algorithm?/ What is the cost function?
+**Hard-margin (the training data is linearly separable):**
+
+With a normalized or standardized dataset, these hyperplanes can be described by the equations:
+
+$$\vec{w} \cdot \vec{x}- b= 1$$ (anything on or above this boundary is of one class, with label 1) <br>
+and <br>
+$$\vec{w} \cdot \vec{x}- b= -1$$ (anything on or below this boundary is of the other class, with label −1). <br>
+
+Geometrically, the distance between these two hyperplanes is $$\frac{2}{\vert\vert \vec{w} \vert\vert}$$, so to maximize the distance between the planes we want to minimize $$\vert\vert \vec{w} \vert\vert$$. The distance is computed using the distance from a point to a plane equation. We also have to prevent data points from falling into the margin, we add the following constraint: for each $$i$$ either
+
+$$\vec{w} \cdot \vec{x_i}- b \ge 1$$, if $$y_i= 1$$ <br>
+or <br>
+$$\vec{w} \cdot \vec{x_i}- b \le 1$$, if $$y_i= -1$$ <br>
+
+These constraints state that each data point must lie on the correct side of the margin.
+
+This can be rewritten as
+
+$$y_i(\vec{w} \cdot \vec{x_i}- b) \ge 1$$, for all $$1\ne i \ne n$$ <br>
+
+We can put this together to get the optimization problem:
+
+Minimize $$\vert\vert \vec{w} \vert\vert$$ subject to $$y_i(\vec{w} \cdot \vec{x_i}- b) \ge 1$$, for all $$1\ne i \ne n$$
+
+The $$\vec{w}$$ and $$b$$ that solve this problem determine our classifier, $$\vec{x} \mapsto sgn(\vec{w} \cdot \vec{x_i}- b)$$
 
 
-### 15.3 What is the process of the algorithm?
+**Soft-margin (the data are not linearly separable)**
+
+$$\max (0, 1-y_i(\vec{w} \cdot \vec{x_i}- b))$$
+
+Note that $$y_i$$ is the i-th target and $$\vec{w} \cdot \vec{x_i}- b$$ is the current output.
+
+We then wish to minimize \$$\frac{1}{n} \sum_{i=1}^n \max(0, 1-y_i(\vec{w} \cdot \vec{x_i}- b)) + \lambda {\vert\vert \vec{w} \vert\vert }^2$$,
+
+where the parameter $$\lambda$$ determines the trade-off between increasing the margin size and ensuring that the $$\vec{x_i}$$ lie on the correct side of the margin. Thus, for sufficiently small values of $$\lambda$$, the second term in the loss function will become negligible, hence, it will behave similar to the hard-margin SVM, if the input data are linearly classifiable, but will still learn if a classification rule is viable or not.
+
+**Kernel:**
 
 
-### 15.4 What is the cost function?
-
-
-### 15.5 What are the advantages and disadvantages?
+### 15.3 What are the advantages and disadvantages?
 **Advantages:**
 
 
