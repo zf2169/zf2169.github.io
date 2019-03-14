@@ -426,13 +426,10 @@ The $$\vec{w}$$ and $$b$$ that solve this problem determine our classifier, $$\v
 
 
 **Soft-margin (the data are not linearly separable)**
-
-$$\max (0, 1-y_i(\vec{w} \cdot \vec{x_i}- b))$$
-
+The hinge loss function: \$$\max (0, 1-y_i(\vec{w} \cdot \vec{x_i}- b))$$ <br>
 Note that $$y_i$$ is the i-th target and $$\vec{w} \cdot \vec{x_i}- b$$ is the current output.
 
-We then wish to minimize \$$\frac{1}{n} \sum_{i=1}^n \max(0, 1-y_i(\vec{w} \cdot \vec{x_i}- b)) + \lambda {\vert\vert \vec{w} \vert\vert }^2$$,
-
+We then wish to minimize \$$\frac{1}{n} \sum_{i=1}^n \max(0, 1-y_i(\vec{w} \cdot \vec{x_i}- b)) + \lambda {\vert\vert \vec{w} \vert\vert }^2$$
 where the parameter $$\lambda$$ determines the trade-off between increasing the margin size and ensuring that the $$\vec{x_i}$$ lie on the correct side of the margin. Thus, for sufficiently small values of $$\lambda$$, the second term in the loss function will become negligible, hence, it will behave similar to the hard-margin SVM, if the input data are linearly classifiable, but will still learn if a classification rule is viable or not.
 
 **Kernel:**
