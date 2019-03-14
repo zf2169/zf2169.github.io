@@ -432,15 +432,23 @@ Note that $$y_i$$ is the i-th target and $$\vec{w} \cdot \vec{x_i}- b$$ is the c
 We then wish to minimize \$$\frac{1}{n} \sum_{i=1}^n \max(0, 1-y_i(\vec{w} \cdot \vec{x_i}- b)) + \lambda {\vert\vert \vec{w} \vert\vert }^2$$
 where the parameter $$\lambda$$ determines the trade-off between increasing the margin size and ensuring that the $$\vec{x_i}$$ lie on the correct side of the margin. Thus, for sufficiently small values of $$\lambda$$, the second term in the loss function will become negligible, hence, it will behave similar to the hard-margin SVM, if the input data are linearly classifiable, but will still learn if a classification rule is viable or not.
 
-**Kernel:**
-
+**Kernel (Non-Linear Decision Boundary):**
+<p align="center">
+  <img width="600" src="https://zf2169.github.io/img/svm1.PNG">
+</p>
 
 ### 15.3 What are the advantages and disadvantages?
 **Advantages:**
-
+- SVM models have generalization in practice, the risk of overfitting is less in SVM.
+- The kernel trick is real strength of SVM, that is, we can solve complex problem with an appropriate kernel function.
+- An SVM is defined by a convex optimization problem (no local minima)
+- Works well with even unstructured and semi-structured data and high-dimensional data.
 
 **Disadvantages:**
-
+- Choose a "good" kernel function is not easy.
+- Long training time for large datasets.
+- Difficult to understand and interpret the final model, varaible weights and individual impact.
+- In p > n cases, SVM works poorly.
 
 <br>
 
