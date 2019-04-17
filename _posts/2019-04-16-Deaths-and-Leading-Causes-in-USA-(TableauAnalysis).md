@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Deaths and Leading Causes in USA"
+title: "Deaths and Leading Causes in USA (Tableau Analysis)"
 date: 2019-04-16
 ---
 
