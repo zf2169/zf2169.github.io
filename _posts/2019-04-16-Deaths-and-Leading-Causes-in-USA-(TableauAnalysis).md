@@ -32,16 +32,14 @@ date: 2019-04-16
 
 
 # Conclusion
-- California is NO.1 most deaths count from 1999 to 2016.
+- California maintains the No.1 most deaths count state from 1999 to 2016.
 
-- Arizona, New Mexico and Texas, Nevada, Utah, Colorado have an increasing trend in the sum of deaths these years and their ranks boosted. 
-
+- States which have an increasing trend in deaths count and boosted ranks these years like Arizona, New Mexico and Texas, Nevada, Utah, Colorado are mainly located at Western America. <br/>
 As we exploring the detailed causes of deaths, we can find that the heart diseases and cancer are both increasing, while the overall number of deaths cause by heart diseases and cancer stays the similar.
 
-- Heart diseases stays the NO.1 cause of death but is gradually decreasing.
+- Heart diseases stays the No.1 cause of death but is gradually decreasing.
 
-- The average age-adjusted death rate drop rapidly these years, which means more and more "young" people surfer from these two diseases. 
-
+- The average age-adjusted death rate drop rapidly these years, which means more and more "young" people surfer from these two diseases. <br/>
 This might be caused by the severer peer competition, the higher pressure from work, bad life styles such as stay late in nights, using computer and cellphone allday, lack of exercises, and unhealthy eating habits of young people. Therefore, we should pay more attention in order to improve this phenomenon.
 
 
