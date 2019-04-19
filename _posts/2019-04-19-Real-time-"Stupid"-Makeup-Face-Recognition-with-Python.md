@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Real-time "Stupid" Makeup - Face Recognition by Python - step by step"
+title: "Real-time "Stupid" Makeup - Face Recognition with Python"
 date: 2019-04-19
 ---
 
