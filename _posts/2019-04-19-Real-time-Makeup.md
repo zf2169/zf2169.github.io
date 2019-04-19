@@ -1,8 +1,9 @@
 ---
 layout: post
-title: "Real-time "Stupid" Makeup - Face Recognition with Python"
+title: Real-time "Stupid" Makeup - Face Recognition with Python
 date: 2019-04-19
 ---
+
 
 # Installation
 My Software Version:
