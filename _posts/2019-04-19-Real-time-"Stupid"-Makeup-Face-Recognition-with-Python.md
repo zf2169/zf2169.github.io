@@ -169,7 +169,7 @@ cv2.destroyAllWindows()
 the color code from `...fill=(0, 0, 150, 128)` to `fill=(150, 0, 0, 64)` to represent the red color.
 
 <p align="center">
-  <img width="800" src="https://zf2169.github.io/img/real_time_makeup.gif">
+  <img width="600" src="https://zf2169.github.io/img/real_time_makeup.gif">
 </p>
 
 
